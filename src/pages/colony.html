@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="COLONY — a speculative procedural on-chain community visualization."
+    />
+    <title>COLONY / One holder. One ant.</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/shared/styles.css" />
+    <link rel="stylesheet" href="/shared/colony.css" />
+  </head>
+
+  <body class="colony-page" data-colony>
+    <canvas class="colony-world" data-colony-canvas aria-hidden="true"></canvas>
+
+    <header class="site-nav colony-nav">
+      <a class="wordmark" href="/work/">
+        <img src="/demos/colony/colony-mark.svg" alt="" />
+        COLONY
+      </a>
+
+      <nav class="colony-nav__links">
+        <a href="#explorer">Explorer</a>
+        <a href="#network">Network</a>
+        <a href="/work/colony/case-study/">Case study</a>
+      </nav>
+
+      <div class="crypto-nav-tools">
+        <span class="chain-badge"><i></i> ONCHAIN DEMO</span>
+        <button class="contract-chip" type="button" data-copy-contract>
+          CA <span data-contract-short>0xC011…2026</span>
+        </button>
+        <button class="wallet-button" type="button" data-connect-wallet>
+          CONNECT WALLET
+        </button>
+      </div>
+
+      <button
+        class="menu-toggle"
+        data-menu-toggle
+        aria-expanded="false"
+        aria-label="Open menu"
+      >
+        Menu
+      </button>
+
+      <nav class="mobile-nav" data-mobile-nav>
+        <a href="#explorer">Explorer</a>
+        <a href="#network">Network</a>
+        <a href="/work/colony/case-study/">Case study</a>
+        <button type="button" data-connect-wallet>CONNECT WALLET</button>
+      </nav>
+    </header>
+
+    <main class="colony-main">
+      <section class="colony-hero">
+        <div class="colony-hero__copy">
+          <p class="colony-kicker">03 / PROCEDURAL ONCHAIN VISUALIZATION</p>
+
+          <h1>
+            ONE HOLDER.<br />
+            <em>ONE ANT.</em>
+          </h1>
+
+          <p class="colony-hero__statement">
+            TOGETHER:<br />
+            THE COLONY.
+          </p>
+
+          <p class="colony-copy">
+            A speculative WebGL system that turns holder distribution into a
+            living, explorable colony.
+          </p>
+
+          <div class="colony-actions">
+            <a class="colony-button" href="#explorer">
+              EXPLORE THE COLONY <span>↓</span>
+            </a>
+            <span class="colony-data-label" data-demo-label>DEMO NETWORK DATA</span>
+          </div>
+        </div>
+
+
+        <div class="crypto-market-strip" aria-label="Demo token market data">
+          <div>
+            <span>TICKER</span>
+            <strong>$COLONY</strong>
+          </div>
+          <div>
+            <span>PRICE</span>
+            <strong>$0.000742</strong>
+          </div>
+          <div>
+            <span>LIQUIDITY</span>
+            <strong>$428K</strong>
+          </div>
+          <div>
+            <span>24H VOLUME</span>
+            <strong>$118K</strong>
+          </div>
+          <div>
+            <span>FDV</span>
+            <strong>$742K</strong>
+          </div>
+          <div class="crypto-market-strip__contract">
+            <span>CONTRACT / DEMO</span>
+            <button type="button" data-copy-contract>0xC011…2026 <b>COPY</b></button>
+          </div>
+        </div>
+
+        <div class="wallet-identity" data-wallet-identity hidden>
+          <span>YOU ARE HERE</span>
+          <strong data-wallet-address>—</strong>
+          <small data-wallet-label>CONNECTED WALLET</small>
+        </div>
+
+        <div class="colony-hero__metrics">
+          <div>
+            <span>HOLDERS</span>
+            <strong data-colony-metric="holders">—</strong>
+          </div>
+          <div>
+            <span>ACTIVE</span>
+            <strong data-colony-metric="active">—</strong>
+          </div>
+          <div>
+            <span>CLUSTERS</span>
+            <strong data-colony-metric="clusters">—</strong>
+          </div>
+        </div>
+
+        <div class="colony-scroll-cue">
+          <span>SCROLL TO ENTER</span>
+          <i></i>
+        </div>
+      </section>
+
+      <section class="colony-story colony-story--enter">
+        <div class="colony-section-copy">
+          <p class="colony-kicker">01 / FORMATION</p>
+          <h2>
+            ONE ANT DOESN'T<br />
+            <em>MOVE A MARKET.</em>
+          </h2>
+          <p>
+            An isolated holder means very little. Distribution, activity and
+            relationships become meaningful when they are seen as a system.
+          </p>
+        </div>
+
+        <div class="colony-story-number">
+          <span>NEW HOLDERS</span>
+          <strong data-colony-metric="newHolders">—</strong>
+        </div>
+      </section>
+
+      <section class="colony-explorer" id="explorer">
+        <div class="colony-explorer__top">
+          <div>
+            <p class="colony-kicker">02 / HOLDER EXPLORER</p>
+            <h2>
+              A COLONY<br />
+              <em>DOES.</em>
+            </h2>
+          </div>
+
+          <div class="colony-mode-switch" role="group" aria-label="Colony visualization mode">
+            <button class="is-active" type="button" data-colony-mode="ants" aria-pressed="true">
+              ANT
+            </button>
+            <button type="button" data-colony-mode="nodes" aria-pressed="false">
+              NODE
+            </button>
+            <button type="button" data-colony-mode="clusters" aria-pressed="false">
+              CLUSTER
+            </button>
+          </div>
+        </div>
+
+
+        <div class="wallet-colony-panel" data-wallet-panel hidden>
+          <span>WALLET LOCATED IN COLONY</span>
+          <strong data-wallet-holder>—</strong>
+          <small data-wallet-cluster>—</small>
+        </div>
+
+        <div class="colony-explorer__instruction">
+          <span>MOVE ACROSS THE FIELD</span>
+          <strong>HOVER / CLICK A HOLDER</strong>
+        </div>
+
+        <aside class="holder-inspector" data-holder-inspector>
+          <button
+            class="holder-inspector__close"
+            type="button"
+            data-inspector-close
+            aria-label="Close holder inspector"
+          >
+            ×
+          </button>
+
+          <p>SELECTED HOLDER</p>
+          <h3 data-holder-value="address">—</h3>
+
+          <dl>
+            <div>
+              <dt>POSITION</dt>
+              <dd data-holder-value="position">—</dd>
+            </div>
+            <div>
+              <dt>BALANCE</dt>
+              <dd data-holder-value="balance">—</dd>
+            </div>
+            <div>
+              <dt>JOINED</dt>
+              <dd data-holder-value="joined">—</dd>
+            </div>
+            <div>
+              <dt>ACTIVITY</dt>
+              <dd data-holder-value="activity">—</dd>
+            </div>
+            <div>
+              <dt>FORMATION</dt>
+              <dd data-holder-value="cluster">—</dd>
+            </div>
+          </dl>
+
+          <span class="holder-inspector__demo">DEMO HOLDER PROFILE</span>
+        </aside>
+      </section>
+
+      <section class="colony-network" id="network">
+        <div class="colony-section-copy">
+          <p class="colony-kicker">03 / NETWORK VIEW</p>
+          <h2>
+            HOLDER<br />
+            <em>BECOMES NODE.</em>
+          </h2>
+          <p>
+            The same population can be read as individual participants,
+            computational nodes, or larger behavioral formations.
+          </p>
+        </div>
+
+        <div class="colony-network__readout">
+          <span>VIEW LAYERS</span>
+          <strong>ANT → NODE → CLUSTER</strong>
+          <small>ONE DATASET / THREE REPRESENTATIONS</small>
+        </div>
+      </section>
+
+      <section class="colony-activity">
+        <div class="colony-activity__headline">
+          <p class="colony-kicker">04 / ACTIVITY</p>
+          <h2>
+            THE NETWORK<br />
+            <em>LEAVES TRAILS.</em>
+          </h2>
+        </div>
+
+
+        <div class="crypto-live-activity">
+          <div class="crypto-live-activity__head">
+            <span><i></i> LIVE / DEMO ACTIVITY</span>
+            <small>VISUAL EVENTS DRIVE WEBGL SIGNAL PULSES</small>
+          </div>
+          <div class="crypto-live-activity__rows" data-crypto-feed>
+            <div><span>BUY</span><strong>+42.8K $COLONY</strong><small>7Hp…92K</small></div>
+            <div><span>TRANSFER</span><strong>18.2K $COLONY</strong><small>3Kr…11A</small></div>
+            <div><span>NEW HOLDER</span><strong>+1 ADDRESS</strong><small>9Qx…7L2</small></div>
+            <div><span>WHALE MOVE</span><strong>284K $COLONY</strong><small>5Fm…0P8</small></div>
+          </div>
+        </div>
+
+        <div class="activity-readouts">
+          <article>
+            <span>01</span>
+            <strong>TRANSFER PATHS</strong>
+            <p>Procedural paths express movement through the demo network.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <strong>ACTIVE HOLDERS</strong>
+            <p>High-activity holders receive controlled motion and signal emphasis.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <strong>FORMATIONS</strong>
+            <p>Spatial clusters make concentration visible without a spreadsheet.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="colony-structure">
+        <div class="colony-section-copy colony-section-copy--center">
+          <p class="colony-kicker">05 / STRUCTURE</p>
+          <h2>
+            ZOOM OUT.<br />
+            <em>SEE THE SYSTEM.</em>
+          </h2>
+        </div>
+
+        <div class="structure-legend">
+          <div><i></i><span>CORE COLONY</span></div>
+          <div><i></i><span>ACTIVE FORMATIONS</span></div>
+          <div><i></i><span>OUTER NETWORK</span></div>
+        </div>
+      </section>
+
+      <section class="colony-cta">
+        <p class="colony-kicker">06 / CREATIVE DEVELOPMENT</p>
+        <h2>
+          NOT A SCREENSHOT.<br />
+          <em>A LIVING SYSTEM.</em>
+        </h2>
+        <p>
+          Three.js, procedural geometry, deterministic data and interaction —
+          built directly in the browser.
+        </p>
+
+        <div class="colony-actions colony-actions--center">
+          <a class="colony-button colony-button--light" href="/work/colony/case-study/">
+            VIEW CASE STUDY <span>↗</span>
+          </a>
+          <a class="colony-text-link" href="/work/">VIEW ALL WORK</a>
+        </div>
+
+        <p class="colony-disclaimer">
+          Independent concept project. Not affiliated with or commissioned by
+          the referenced project. Holder and network values are deterministic
+          demo data.
+        </p>
+      </section>
+    </main>
+
+    <div class="holder-tooltip" data-holder-tooltip hidden>
+      <strong data-tooltip-address>—</strong>
+      <span data-tooltip-state>—</span>
+      <small data-tooltip-share>—</small>
+    </div>
+
+    <footer class="site-footer colony-footer">
+      <span>COLONY / PROCEDURAL WEBGL CONCEPT</span>
+      <span>© <span data-year></span> / FIELD NOTE</span>
+      <span><a href="/work/colony/case-study/">CASE STUDY ↗</a></span>
+    </footer>
+
+    <script type="module">
+      import { initColony } from "/shared/colony.js";
+
+      // Core WebGL must initialize even if optional crypto/GLB extras fail to load.
+      initColony();
+
+      import("/shared/colony-extras.js")
+        .then(({ initColonyExtras }) => {
+          initColonyExtras();
+        })
+        .catch((error) => {
+          console.warn("COLONY extras unavailable:", error);
+        });
+    </script>
+  </body>
+</html>

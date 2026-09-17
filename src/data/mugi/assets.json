@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "source": "/demos/mugi/mugi-main.png",
+    "web": "/demos/mugi/optimized/mugi-main.webp",
+    "alt": "MUGI standing above a floating Japanese future world"
+  },
+  "running": {
+    "source": "/demos/mugi/mugi-running.png",
+    "web": "/demos/mugi/optimized/mugi-running.webp",
+    "alt": "MUGI running forward"
+  },
+  "runningCutout": {
+    "source": "/demos/mugi/mugi-running-cutout.png",
+    "web": "/demos/mugi/optimized/mugi-running-cutout.webp",
+    "alt": "MUGI running cutout"
+  },
+  "space": {
+    "source": "/demos/mugi/mugi-space.png",
+    "web": "/demos/mugi/optimized/mugi-space.webp",
+    "alt": "MUGI in a space environment"
+  },
+  "trader": {
+    "source": "/demos/mugi/mugi-trader.png",
+    "web": "/demos/mugi/optimized/mugi-trader.webp",
+    "alt": "MUGI at a futuristic trading setup"
+  },
+  "campaign": {
+    "sky": { "source": "/demos/mugi/campaign/mugi-campaign-sky.png", "web": "/demos/mugi/optimized/campaign/mugi-campaign-sky.webp", "alt": "MUGI campaign sky" },
+    "city": { "source": "/demos/mugi/campaign/mugi-campaign-city.png", "web": "/demos/mugi/optimized/campaign/mugi-campaign-city.webp", "alt": "MUGI campaign city" },
+    "space": { "source": "/demos/mugi/campaign/mugi-campaign-space.png", "web": "/demos/mugi/optimized/campaign/mugi-campaign-space.webp", "alt": "MUGI campaign space" },
+    "dark": { "source": "/demos/mugi/campaign/mugi-campaign-dark.png", "web": "/demos/mugi/optimized/campaign/mugi-campaign-dark.webp", "alt": "MUGI dark campaign artwork" }
+  },
+  "objects": {
+    "token": { "source": "/demos/mugi/objects/mugi-token.png", "web": "/demos/mugi/optimized/objects/mugi-token.webp", "alt": "MUGI token object" },
+    "cloudLayer": { "source": "/demos/mugi/objects/mugi-cloud-layer.png", "web": "/demos/mugi/optimized/objects/mugi-cloud-layer.webp", "alt": "MUGI cloud layer" }
+  },
+  "motion": {
+    "source": "/demos/mugi/motion/launch-loop.png",
+    "web": "/demos/mugi/optimized/motion/launch-loop.webp",
+    "kind": "still",
+    "alt": "MUGI launch motion still"
+  }
+}

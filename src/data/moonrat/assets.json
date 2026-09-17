@@ -1,0 +1,50 @@
+{
+  "moonrat-head": {
+    "source": "/demos/moonrat/moonrat-head.png",
+    "web": "/demos/moonrat/moonrat-head.png"
+  },
+  "moonrat-hero": {
+    "source": "/demos/moonrat/moonrat-hero.png",
+    "web": "/demos/moonrat/moonrat-hero.png"
+  },
+  "moonrat-master": {
+    "source": "/demos/moonrat/moonrat-master.png",
+    "web": "/demos/moonrat/moonrat-master.png"
+  },
+  "moonrat-moon": {
+    "source": "/demos/moonrat/moonrat-moon.png",
+    "web": "/demos/moonrat/moonrat-moon.png"
+  },
+  "moonrat-og": {
+    "source": "/demos/moonrat/moonrat-og.png",
+    "web": "/demos/moonrat/moonrat-og.png"
+  },
+  "moonrat-paper-texture": {
+    "source": "/demos/moonrat/moonrat-paper-texture.png",
+    "web": "/demos/moonrat/moonrat-paper-texture.png"
+  },
+  "moonrat-propaganda-poster": {
+    "source": "/demos/moonrat/moonrat-propaganda-poster.png",
+    "web": "/demos/moonrat/moonrat-propaganda-poster.png"
+  },
+  "moonrat-rat-cutout": {
+    "source": "/demos/moonrat/moonrat-rat-cutout.png",
+    "web": "/demos/moonrat/moonrat-rat-cutout.png"
+  },
+  "moonrat-rocket-cutout": {
+    "source": "/demos/moonrat/moonrat-rocket-cutout.png",
+    "web": "/demos/moonrat/moonrat-rocket-cutout.png"
+  },
+  "moonrat-rocket-rat": {
+    "source": "/demos/moonrat/moonrat-rocket-rat.png",
+    "web": "/demos/moonrat/moonrat-rocket-rat.png"
+  },
+  "moonrat-sticker-sheet": {
+    "source": "/demos/moonrat/moonrat-sticker-sheet.png",
+    "web": "/demos/moonrat/moonrat-sticker-sheet.png"
+  },
+  "moonrat-token": {
+    "source": "/demos/moonrat/moonrat-token.png",
+    "web": "/demos/moonrat/moonrat-token.png"
+  }
+}

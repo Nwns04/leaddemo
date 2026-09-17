@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="COLONY case study — procedural holder visualization built with Three.js."
+    />
+    <title>COLONY / Case study</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/shared/styles.css" />
+    <link rel="stylesheet" href="/shared/colony.css" />
+  </head>
+
+  <body class="colony-case-page">
+    <header class="site-nav colony-nav colony-nav--case">
+      <a class="wordmark" href="/work/colony/">
+        <img src="/demos/colony/colony-mark.svg" alt="" />
+        COLONY
+      </a>
+      <nav>
+        <a href="/work/colony/">Live demo</a>
+        <a href="/work/">All work</a>
+      </nav>
+    </header>
+
+    <main class="colony-case">
+      <section class="colony-case-hero">
+        <div>
+          <p class="colony-kicker">CASE STUDY / 03</p>
+          <h1>
+            DATA<br />
+            <em>BECOMES<br />BEHAVIOR.</em>
+          </h1>
+        </div>
+        <div class="case-meta">
+          <span>DISCIPLINE</span>
+          <strong>WEBGL / DATA VISUALIZATION / PRODUCT DESIGN</strong>
+          <span>ENGINE</span>
+          <strong>THREE.JS</strong>
+          <span>DATA</span>
+          <strong>DETERMINISTIC DEMO NETWORK</strong>
+        </div>
+      </section>
+
+      <section class="case-chapter">
+        <span class="case-index">01</span>
+        <div>
+          <p class="colony-kicker">CONCEPT</p>
+          <h2>ONE HOLDER.<br /><em>ONE ANT.</em></h2>
+        </div>
+        <p class="case-copy">
+          COLONY converts a familiar crypto abstraction — token holders — into
+          a spatial system. Every holder becomes one procedural ant, making
+          distribution readable through density, movement and formation.
+        </p>
+      </section>
+
+      <section class="case-board case-board--identity">
+        <img src="/demos/colony/colony-mark.svg" alt="COLONY ant mark" />
+        <div>
+          <span>COLONY</span>
+          <strong>ONE HOLDER.<br />ONE ANT.</strong>
+        </div>
+        <small>DARK EARTH / BRONZE / AMBER / OFF-WHITE</small>
+      </section>
+
+      <section class="case-chapter">
+        <span class="case-index">02</span>
+        <div>
+          <p class="colony-kicker">PROCEDURAL DESIGN</p>
+          <h2>NO HERO<br /><em>IMAGE.</em></h2>
+        </div>
+        <p class="case-copy">
+          The visual world is generated at runtime: terrain, ants, paths,
+          clusters, particles and light. This avoids the alignment problems of
+          compositing unrelated AI-generated images.
+        </p>
+      </section>
+
+      <section class="case-system-grid">
+        <article>
+          <span>01</span>
+          <strong>INSTANCED HOLDERS</strong>
+          <p>Thousands of holders share a small set of geometries and materials.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>PROCEDURAL TERRAIN</strong>
+          <p>Geometry displacement creates a repeatable dark-earth world.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>SCROLL CAMERA</strong>
+          <p>The browser scroll position becomes a controlled cinematic camera path.</p>
+        </article>
+        <article>
+          <span>04</span>
+          <strong>HOLDER INSPECTION</strong>
+          <p>Raycasting maps rendered instances back to deterministic holder records.</p>
+        </article>
+      </section>
+
+      <section class="case-chapter">
+        <span class="case-index">03</span>
+        <div>
+          <p class="colony-kicker">REPRESENTATION</p>
+          <h2>ANT.<br />NODE.<br /><em>CLUSTER.</em></h2>
+        </div>
+        <p class="case-copy">
+          One dataset is allowed to change visual language. The user can read
+          the community narratively as ants, analytically as nodes, or
+          structurally as formations.
+        </p>
+      </section>
+
+      <section class="case-board case-board--modes">
+        <div class="mode-plate">
+          <span>ANT</span>
+          <b>INDIVIDUAL</b>
+        </div>
+        <div class="mode-plate">
+          <span>NODE</span>
+          <b>COMPUTATIONAL</b>
+        </div>
+        <div class="mode-plate">
+          <span>CLUSTER</span>
+          <b>STRUCTURAL</b>
+        </div>
+      </section>
+
+      <section class="case-chapter">
+        <span class="case-index">04</span>
+        <div>
+          <p class="colony-kicker">PERFORMANCE</p>
+          <h2>THOUSANDS.<br /><em>NOT THOUSANDS OF COMPONENTS.</em></h2>
+        </div>
+        <p class="case-copy">
+          COLONY uses THREE.InstancedMesh for the holder population, clamps
+          device pixel ratio, reduces population on mobile, and respects
+          reduced-motion preferences.
+        </p>
+      </section>
+
+      <section class="case-tech">
+        <span>THREE.JS</span>
+        <span>WEBGL</span>
+        <span>INSTANCED MESH</span>
+        <span>RAYCASTING</span>
+        <span>PROCEDURAL GEOMETRY</span>
+        <span>DETERMINISTIC DATA</span>
+        <span>RESPONSIVE CANVAS</span>
+        <span>REDUCED MOTION</span>
+      </section>
+
+      <section class="colony-case-end">
+        <p class="colony-kicker">LIVE EXPERIENCE</p>
+        <h2>ENTER<br /><em>THE COLONY.</em></h2>
+        <a class="colony-button colony-button--light" href="/work/colony/">
+          OPEN LIVE DEMO <span>↗</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer colony-footer">
+      <span>COLONY / CASE STUDY</span>
+      <span>DEMO DATA / INDEPENDENT CONCEPT</span>
+      <span><a href="/work/">ALL WORK ↗</a></span>
+    </footer>
+
+    <script type="module">
+      import { initSite } from "/shared/site.js";
+      initSite();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "characters": {
+    "sheepMain": "/demos/lwolf/assets/characters/lwolf-sheep-main.png",
+    "wolfMain": "/demos/lwolf/assets/characters/lwolf-wolf-main.png",
+    "sheepHead": "/demos/lwolf/assets/characters/lwolf-sheep-head.png",
+    "wolfHead": "/demos/lwolf/assets/characters/lwolf-wolf-head.png"
+  },
+
+  "collage": {
+    "tornPaper01": "/demos/lwolf/assets/collage/torn-paper-01.png",
+    "tornPaper02": "/demos/lwolf/assets/collage/torn-paper-02.jpg",
+    "tape01": "/demos/lwolf/assets/collage/masking-tape-01.png",
+    "tape02": "/demos/lwolf/assets/collage/masking-tape-02.png",
+    "scribbleArrow": "/demos/lwolf/assets/collage/scribble-arrow.png",
+    "markerCircle": "/demos/lwolf/assets/collage/marker-circle.png",
+    "redStamp": "/demos/lwolf/assets/collage/red-stamp.png",
+    "warningSticker": "/demos/lwolf/assets/collage/warning-sticker.png",
+    "paperScrap": "/demos/lwolf/assets/collage/paper-scrap.png"
+  },
+
+  "campaign": {
+    "launchPoster": "/demos/lwolf/assets/campaign/lwolf-launch-poster.png",
+    "xHeader": "/demos/lwolf/assets/campaign/lwolf-x-header.png",
+    "telegramBanner": "/demos/lwolf/assets/campaign/lwolf-telegram-banner.png",
+    "dexBanner": "/demos/lwolf/assets/campaign/lwolf-dex-banner.png",
+    "joinThePack": "/demos/lwolf/assets/campaign/lwolf-join-the-pack.png"
+  },
+
+ "textures": {
+  "paperGrain": "/demos/lwolf/assets/textures/paper-grain.jpg",
+  "paperExtra": "/demos/lwolf/assets/textures/paper-extra.jpg",
+  "photocopyNoise": "/demos/lwolf/assets/textures/photocopy-noise.jpg",
+  "halftone": "/demos/lwolf/assets/textures/halftone.png",
+  "inkBleed": "/demos/lwolf/assets/textures/ink-distress.jpg",
+  "roughEdge": "/demos/lwolf/assets/textures/rough-edge-mask.jpg"
+}
+}

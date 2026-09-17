@@ -1,0 +1,12 @@
+dist/
+output/
+marketing/
+.capture-tools/
+src.zip
+*.mp4
+*.webm
+*.mov
+*.avi
+*.mkv
+demo/demo.zip
+demo/demo.zip

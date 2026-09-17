@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+<rect width="100%" height="100%" fill="#f24b38"/><rect x="45" y="45" width="810" height="1110" fill="#e7dfcf" stroke="#171717" stroke-width="18"/><text x="450" y="160" text-anchor="middle" font-family="Arial" font-size="94" font-weight="900" fill="#171717">SEND</text><text x="450" y="255" text-anchor="middle" font-family="Arial" font-size="94" font-weight="900" fill="#171717">THE RAT</text><g transform="translate(145 275) scale(0.72)">
+      <path d="M180 480 C105 390 112 252 220 188 C312 133 445 162 510 246 C582 338 558 492 456 550 C355 610 239 564 180 480Z" fill="#9b968c" stroke="#171717" stroke-width="18"/>
+      <circle cx="214" cy="202" r="74" fill="#bdb8ad" stroke="#171717" stroke-width="18"/><circle cx="455" cy="198" r="74" fill="#bdb8ad" stroke="#171717" stroke-width="18"/>
+      <circle cx="300" cy="320" r="20" fill="#171717"/><circle cx="422" cy="312" r="20" fill="#171717"/>
+      <path d="M358 367 l30 18 -29 20 -28 -17Z" fill="#f24b38" stroke="#171717" stroke-width="8"/>
+      <path d="M315 404 Q362 446 420 402" fill="none" stroke="#171717" stroke-width="13"/>
+      <path d="M505 492 Q645 544 678 440 Q700 370 651 328" fill="none" stroke="#f24b38" stroke-width="24" stroke-linecap="round"/>
+      <path d="M232 535 L190 652 M438 538 L474 650" stroke="#171717" stroke-width="34" stroke-linecap="round"/>
+      <path d="M260 360 L110 330 M260 388 L104 400 M455 355 L612 320 M454 388 L615 405" stroke="#171717" stroke-width="8"/>
+    </g><text x="450" y="1080" text-anchor="middle" font-family="monospace" font-size="34" font-weight="700" fill="#171717">BAD IDEA APPROVED</text></svg>

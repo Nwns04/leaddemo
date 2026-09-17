@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="STONKS — fictional retail-market terminal demo." />
+  <title>STONKS / Market Terminal</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <link rel="stylesheet" href="/shared/stonks.css" />
+</head>
+<body class="stonks-page">
+  <div class="stonks-scanlines" aria-hidden="true"></div>
+
+  <header class="market-header">
+    <a class="market-logo" href="/work/">STONKS</a>
+    <nav class="market-nav" aria-label="STONKS sections">
+      <a href="#market">MARKET</a>
+      <a href="#movers">MOVERS</a>
+      <a href="#chart">CHART</a>
+      <a href="#sentiment">SENTIMENT</a>
+      <a href="#portfolio">PORTFOLIO</a>
+      <a href="#signals">SIGNALS</a>
+    </nav>
+    <div class="market-status"><span class="market-status__dot"></span><span>MARKET OPEN</span><time data-market-clock>09:42:16</time></div>
+    <button class="market-menu" type="button" data-mobile-menu aria-expanded="false">MENU</button>
+  </header>
+
+  <main>
+    <section class="market-hero" id="market">
+      <div class="market-grid-overlay" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="terminal-label">01 / MARKET OPEN</p>
+        <h1>EVERY NUMBER<br><span>HAS A STORY.</span></h1>
+        <p class="hero-deck">A fictional retail-market terminal built around price movement, internet sentiment, portfolio behavior and information choreography.</p>
+        <div class="hero-actions">
+          <a class="market-button" href="#movers">ENTER TERMINAL →</a>
+          <a class="market-text-link" href="#portfolio">BUILD A PORTFOLIO</a>
+        </div>
+      </div>
+      <div class="hero-market-board" aria-label="Market snapshot">
+        <article class="quote-block quote-block--primary"><span>STONKS</span><strong data-live-price="stonks">142.84</strong><em class="is-up" data-live-change="stonks">+18.42%</em></article>
+        <article class="quote-block"><span>S&amp;P 500</span><strong>6,431.22</strong><em class="is-up">+0.82%</em></article>
+        <article class="quote-block"><span>NASDAQ</span><strong>21,402.08</strong><em class="is-up">+1.14%</em></article>
+        <article class="quote-block"><span>BTC</span><strong>118,420</strong><em class="is-up">+3.41%</em></article>
+      </div>
+      <div class="hero-crosshair" aria-hidden="true"><span></span><span></span></div>
+    </section>
+
+    <section class="tape-section" aria-label="Market tape">
+      <div class="section-heading"><p class="terminal-label">02 / THE TAPE</p><h2>THE MARKET<br><span>NEVER SHUTS UP.</span></h2></div>
+      <div class="tape-wall" aria-hidden="true">
+        <div class="tape-lane" data-tape-direction="left"><div class="tape-track">
+          <span>NVDA <b>188.42</b> <i class="is-up">+3.12%</i></span><span>AAPL <b>248.08</b> <i class="is-down">-0.42%</i></span><span>TSLA <b>481.20</b> <i class="is-up">+5.84%</i></span><span>BTC <b>118,420</b> <i class="is-up">+2.71%</i></span><span>ETH <b>4,820</b> <i class="is-up">+4.18%</i></span><span>STONKS <b>142.84</b> <i class="is-up">+18.42%</i></span>
+        </div></div>
+        <div class="tape-lane tape-lane--inverse" data-tape-direction="right"><div class="tape-track">
+          <span>AMD <b>182.13</b> <i class="is-up">+1.06%</i></span><span>COIN <b>416.88</b> <i class="is-down">-2.11%</i></span><span>META <b>787.02</b> <i class="is-up">+0.91%</i></span><span>PLTR <b>190.06</b> <i class="is-up">+4.72%</i></span><span>AMZN <b>232.44</b> <i class="is-down">-0.18%</i></span><span>SPY <b>643.12</b> <i class="is-up">+0.82%</i></span>
+        </div></div>
+        <div class="tape-lane" data-tape-direction="left"><div class="tape-track">
+          <span>$MOON <b>8.42</b> <i class="is-up">+84.20%</i></span><span>$COPE <b>4.12</b> <i class="is-up">+61.80%</i></span><span>$RUG <b>0.04</b> <i class="is-down">-92.10%</i></span><span>$FOMO <b>1.84</b> <i class="is-down">-61.40%</i></span><span>$BAGS <b>6.28</b> <i class="is-up">+42.10%</i></span><span>$LATE <b>0.91</b> <i class="is-down">-43.80%</i></span>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="market-panel movers-section" id="movers">
+      <div class="panel-rail"><p class="terminal-label">03 / MOVERS</p><span>RANKED BY MOMENTUM</span><span>DEMO DATA</span></div>
+      <div class="movers-layout">
+        <div class="movers-list" role="listbox" aria-label="Top movers">
+          <button class="mover-row is-active" type="button" data-symbol="MOON" data-change="84.2"><span>01</span><b>$MOON</b><em class="is-up">+84.2%</em></button>
+          <button class="mover-row" type="button" data-symbol="COPE" data-change="61.8"><span>02</span><b>$COPE</b><em class="is-up">+61.8%</em></button>
+          <button class="mover-row" type="button" data-symbol="BAGS" data-change="42.1"><span>03</span><b>$BAGS</b><em class="is-up">+42.1%</em></button>
+          <button class="mover-row" type="button" data-symbol="STONKS" data-change="31.7"><span>04</span><b>$STONKS</b><em class="is-up">+31.7%</em></button>
+          <button class="mover-row" type="button" data-symbol="RUG" data-change="-92.1"><span>05</span><b>$RUG</b><em class="is-down">-92.1%</em></button>
+          <button class="mover-row" type="button" data-symbol="FOMO" data-change="-61.4"><span>06</span><b>$FOMO</b><em class="is-down">-61.4%</em></button>
+        </div>
+        <div class="movers-chart-panel">
+          <div class="chart-meta"><div><span>SELECTED</span><strong data-mover-symbol>$MOON</strong></div><div><span>SESSION</span><strong data-mover-change class="is-up">+84.2%</strong></div></div>
+          <svg class="mover-chart" viewBox="0 0 900 440" role="img" aria-label="Selected mover price chart">
+            <defs><pattern id="grid" width="75" height="55" patternUnits="userSpaceOnUse"><path d="M 75 0 L 0 0 0 55" class="chart-grid-line"></path></pattern></defs>
+            <rect width="900" height="440" fill="url(#grid)"></rect><path class="mover-chart__area" data-mover-area></path><path class="mover-chart__line" data-mover-line></path><circle class="mover-chart__tracer" data-mover-tracer r="5"></circle><circle class="mover-chart__dot" data-mover-dot r="7"></circle>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-section" id="chart">
+      <div class="chart-topline">
+        <div><p class="terminal-label">04 / THE CHART</p><h2>FOLLOW<br><span>THE LINE.</span></h2></div>
+        <div class="timeframe-control" role="group" aria-label="Chart timeframe"><button type="button" data-timeframe="1H">1H</button><button type="button" data-timeframe="1D" class="is-active">1D</button><button type="button" data-timeframe="1W">1W</button><button type="button" data-timeframe="1M">1M</button><button type="button" data-timeframe="1Y">1Y</button><button type="button" data-timeframe="ALL">ALL</button></div>
+      </div>
+      <div class="interactive-chart" data-interactive-chart>
+        <svg viewBox="0 0 1200 560" preserveAspectRatio="none" aria-label="STONKS market chart">
+          <defs><linearGradient id="stonksAreaGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity="0.28"></stop><stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop></linearGradient><pattern id="stonksGrid" width="100" height="70" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 70" class="chart-grid-line"></path></pattern></defs>
+          <rect width="1200" height="560" fill="url(#stonksGrid)"></rect><path class="main-chart__area" data-main-area></path><path class="main-chart__line" data-main-line></path><circle class="main-chart__tracer" data-main-tracer r="5"></circle><circle class="main-chart__endpoint" data-main-endpoint r="7"></circle><line class="main-chart__cross-x" data-cross-x x1="0" y1="0" x2="0" y2="560"></line><line class="main-chart__cross-y" data-cross-y x1="0" y1="0" x2="1200" y2="0"></line><circle class="main-chart__dot" data-cross-dot r="7"></circle>
+        </svg>
+        <div class="chart-tooltip" data-chart-tooltip><span data-tooltip-time>14:32</span><strong data-tooltip-price>$142.84</strong><em data-tooltip-change>+18.2%</em><small>VOLUME 8.4M</small></div>
+      </div>
+      <div class="chart-axis-copy"><span>FEAR</span><strong>PRICE DISCOVERY</strong><span>GREED</span></div>
+    </section>
+
+    <section class="market-panel sentiment-section" id="sentiment">
+      <div class="sentiment-copy">
+        <p class="terminal-label">05 / SENTIMENT</p><h2>THE INTERNET<br><span>HAS A POSITION.</span></h2>
+        <div class="sentiment-meter"><div class="sentiment-meter__labels"><span>BEARISH <b data-bearish>28%</b></span><span>BULLISH <b data-bullish>72%</b></span></div><div class="sentiment-meter__track"><span data-sentiment-fill></span></div></div>
+      </div>
+      <div class="sentiment-feed" aria-label="Fictional market sentiment feed">
+        <div class="feed-row"><time>14:42:18</time><b>@bullishidiot</b><span>WE ARE SO BACK</span></div><div class="feed-row"><time>14:42:20</time><b>@bagholder01</b><span>HOLD.</span></div><div class="feed-row"><time>14:42:25</time><b>@shortseller</b><span>ABSOLUTELY NOT.</span></div><div class="feed-row"><time>14:42:29</time><b>@terminalbrain</b><span>SOURCE: TRUST ME BRO.</span></div><div class="feed-row"><time>14:42:34</time><b>@lateagain</b><span>IS IT TOO LATE?</span></div><div class="feed-row"><time>14:42:39</time><b>@chartgoblin</b><span>ZOOM OUT.</span></div><div class="feed-row"><time>14:42:44</time><b>@copefund</b><span>THIS IS A HEALTHY PULLBACK.</span></div>
+      </div>
+    </section>
+
+    <section class="portfolio-section" id="portfolio">
+      <div class="portfolio-heading"><p class="terminal-label">06 / PORTFOLIO LAB</p><h2>BUILD YOUR<br><span>TERRIBLE PORTFOLIO.</span></h2><p>$10,000 DEMO CASH. MOVE THE SLIDERS. REGRET NOTHING.</p></div>
+      <div class="portfolio-shell">
+        <div class="portfolio-controls">
+          <label class="allocation-row"><span><b>TECH</b><output data-output="tech">40%</output></span><input type="range" min="0" max="100" value="40" data-allocation="tech"></label>
+          <label class="allocation-row"><span><b>CRYPTO</b><output data-output="crypto">30%</output></span><input type="range" min="0" max="100" value="30" data-allocation="crypto"></label>
+          <label class="allocation-row"><span><b>MEMES</b><output data-output="memes">20%</output></span><input type="range" min="0" max="100" value="20" data-allocation="memes"></label>
+          <label class="allocation-row"><span><b>CASH</b><output data-output="cash">10%</output></span><input type="range" min="0" max="100" value="10" data-allocation="cash"></label>
+          <div class="allocation-total"><span>TOTAL ALLOCATION</span><strong data-allocation-total>100%</strong></div>
+        </div>
+        <div class="portfolio-readout"><article><span>RISK</span><strong data-risk>HIGH</strong></article><article><span>VOLATILITY</span><strong data-volatility>ABSURD</strong></article><article><span>SLEEP QUALITY</span><strong data-sleep>POOR</strong></article><article><span>DEMO CASH</span><strong data-cash-value>$1,000</strong></article></div>
+      </div>
+    </section>
+
+    <section class="signals-section" id="signals">
+      <div class="signals-intro">
+        <div class="signal-monitor" aria-label="Animated signal monitor">
+          <div class="signal-monitor__top"><span>LIVE SIGNAL SCAN</span><b><i></i> ACTIVE</b></div>
+          <div class="signal-monitor__screen">
+            <div class="signal-monitor__grid" aria-hidden="true"></div>
+            <svg viewBox="0 0 560 260" preserveAspectRatio="none" role="img" aria-label="Animated market signal waveform">
+              <path class="signal-monitor__baseline" d="M 0 130 L 560 130"></path>
+              <path class="signal-monitor__path" data-signal-monitor-path d="M 8 194 C 42 188 66 202 96 174 S 145 124 178 142 S 218 196 253 156 S 304 72 342 102 S 385 160 420 122 S 478 46 552 64"></path>
+              <circle class="signal-monitor__dot" data-signal-monitor-dot r="5"></circle>
+            </svg>
+            <span class="signal-monitor__scan" aria-hidden="true"></span>
+          </div>
+          <div class="signal-monitor__stats">
+            <div><span>MOMENTUM</span><strong data-signal-stat="momentum">78</strong></div>
+            <div><span>SOCIAL</span><strong data-signal-stat="social">91</strong></div>
+            <div><span>VOL</span><strong data-signal-stat="volatility">64</strong></div>
+            <div><span>LIQUIDITY</span><strong data-signal-stat="liquidity">52</strong></div>
+          </div>
+        </div>
+
+        <div class="section-heading section-heading--signals"><p class="terminal-label">07 / SIGNALS</p><h2>READ EVERYTHING.<br><span>TRUST NOTHING.</span></h2></div>
+      </div>
+      <div class="signal-grid">
+        <article class="signal-card"><div class="signal-card__top"><span>SIGNAL 001</span><b>WATCH</b></div><h3>MOMENTUM</h3><dl><div><dt>TREND</dt><dd>STRONG</dd></div><div><dt>VOLUME</dt><dd>ABOVE AVG</dd></div><div><dt>SOCIAL</dt><dd>HEATING UP</dd></div><div><dt>STATUS</dt><dd>WATCH</dd></div></dl></article>
+        <article class="signal-card signal-card--red"><div class="signal-card__top"><span>SIGNAL 002</span><b>91</b></div><h3>FOMO INDEX</h3><dl><div><dt>MENTIONS</dt><dd>SPIKING</dd></div><div><dt>ENTRIES</dt><dd>LATE</dd></div><div><dt>CONFIDENCE</dt><dd>LOUD</dd></div><div><dt>STATUS</dt><dd>TOO LATE?</dd></div></dl></article>
+        <article class="signal-card"><div class="signal-card__top"><span>SIGNAL 003</span><b>NEUTRAL</b></div><h3>LIQUIDITY</h3><dl><div><dt>DEPTH</dt><dd>HEALTHY</dd></div><div><dt>SPREAD</dt><dd>TIGHT</dd></div><div><dt>FLOW</dt><dd>MIXED</dd></div><div><dt>STATUS</dt><dd>MONITOR</dd></div></dl></article>
+      </div>
+      <p class="signal-disclaimer">FICTIONAL DEMO SIGNALS FOR PORTFOLIO PRESENTATION ONLY. NOT INVESTMENT ADVICE.</p>
+    </section>
+
+    <section class="newswire-section">
+      <div class="newswire-header"><p class="terminal-label">08 / NEWSWIRE</p><span>LIVE-ish</span></div>
+      <div class="newswire-list"><div><time>14:42:11</time><span>MARKETS EXTEND GAINS INTO AFTERNOON SESSION</span></div><div><time>14:43:03</time><span>TECH LEADS AS RISK APPETITE RETURNS</span></div><div><time>14:44:18</time><span>RETAIL SENTIMENT SPIKES ACROSS SOCIAL CHANNELS</span></div><div><time>14:45:07</time><span>NOBODY KNOWS WHAT IS HAPPENING</span></div><div><time>14:46:22</time><span>EVERYONE PRETENDS THEY DO</span></div></div>
+    </section>
+
+    <section class="market-close">
+      <div><p class="terminal-label">09 / MARKET CLOSE</p><h2>YOUR BAD DECISIONS<br><span>WILL RESUME TOMORROW.</span></h2></div>
+      <div class="close-actions"><a class="market-button" href="#market">REOPEN TERMINAL ↑</a><a class="market-text-link" href="/work/">BACK TO WORK</a></div>
+    </section>
+  </main>
+
+  <div class="bottom-ticker" aria-label="Persistent market ticker"><div class="bottom-ticker__status"><span class="market-status__dot"></span>OPEN</div><div class="bottom-ticker__viewport"><div class="bottom-ticker__track"><span>SPX <b>6431.22</b> <i class="is-up">+0.82%</i></span><span>NASDAQ <b>21402.08</b> <i class="is-up">+1.14%</i></span><span>BTC <b>118420</b> <i class="is-up">+3.41%</i></span><span>ETH <b>4820</b> <i class="is-up">+4.12%</i></span><span>NVDA <b>188.42</b> <i class="is-up">+3.12%</i></span><span>TSLA <b>481.20</b> <i class="is-up">+5.84%</i></span><span>AAPL <b>248.08</b> <i class="is-down">-0.42%</i></span><span>STONKS <b>142.84</b> <i class="is-up">+18.42%</i></span></div></div></div>
+
+  <script type="module">import { initStonks } from "/shared/stonks.js"; initStonks();</script>
+</body>
+</html>

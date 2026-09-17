@@ -1,0 +1,42 @@
+{
+  "barkbyte-bone-node": {
+    "source": "/demos/barkbyte/barkbyte-bone-node.png",
+    "web": "/demos/barkbyte/barkbyte-bone-node.png"
+  },
+  "barkbyte-head": {
+    "source": "/demos/barkbyte/barkbyte-head.png",
+    "web": "/demos/barkbyte/barkbyte-head.png"
+  },
+  "barkbyte-hero": {
+    "source": "/demos/barkbyte/barkbyte-hero.png",
+    "web": "/demos/barkbyte/barkbyte-hero.png"
+  },
+  "barkbyte-master": {
+    "source": "/demos/barkbyte/barkbyte-master.png",
+    "web": "/demos/barkbyte/barkbyte-master.png"
+  },
+  "barkbyte-og": {
+    "source": "/demos/barkbyte/barkbyte-og.png",
+    "web": "/demos/barkbyte/barkbyte-og.png"
+  },
+  "barkbyte-run-cutout": {
+    "source": "/demos/barkbyte/barkbyte-run-cutout.png",
+    "web": "/demos/barkbyte/barkbyte-run-cutout.png"
+  },
+  "barkbyte-signal-object": {
+    "source": "/demos/barkbyte/barkbyte-signal-object.png",
+    "web": "/demos/barkbyte/barkbyte-signal-object.png"
+  },
+  "barkbyte-sniff-cutout": {
+    "source": "/demos/barkbyte/barkbyte-sniff-cutout.png",
+    "web": "/demos/barkbyte/barkbyte-sniff-cutout.png"
+  },
+  "barkbyte-token": {
+    "source": "/demos/barkbyte/barkbyte-token.png",
+    "web": "/demos/barkbyte/barkbyte-token.png"
+  },
+  "barkbyte-world-strip": {
+    "source": "/demos/barkbyte/barkbyte-world-strip.png",
+    "web": "/demos/barkbyte/barkbyte-world-strip.png"
+  }
+}

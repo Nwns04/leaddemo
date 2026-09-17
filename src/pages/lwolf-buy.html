@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" data-lwolf-buy-mode="day">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LWOLF demo purchase interface — live token/USD conversion."
+    />
+    <title>BUY $LWOLF / Demo</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/shared/styles.css" />
+    <link rel="stylesheet" href="/shared/lwolf-buy.css" />
+  </head>
+
+  <body class="lwolf-buy-page">
+    <div class="buy-paper-texture" aria-hidden="true"></div>
+    <div class="buy-noise-texture" aria-hidden="true"></div>
+
+    <header class="buy-header">
+      <a class="buy-logo" href="/work/lwolf/">LWOLF™</a>
+
+      <div class="buy-header__right">
+        <button class="buy-mode-toggle" type="button" data-buy-mode-toggle>
+          <span class="buy-mode-toggle__dot"></span>
+          <span data-buy-mode-label>DAY / SHEEP</span>
+        </button>
+
+        <a class="buy-back" href="/work/lwolf/">← BACK TO THE HERD</a>
+      </div>
+    </header>
+
+    <main class="buy-main" data-buy-app>
+      <section class="buy-stage buy-stage--active" data-stage="amount">
+        <div class="buy-stage__content">
+          <p class="buy-kicker">BUY / DEMO CHECKOUT</p>
+
+          <h1>
+            HOW MUCH<br />
+            <span>$LWOLF</span><br />
+            DO YOU WANT?
+          </h1>
+
+          <div class="buy-input-mode" role="group" aria-label="Input mode">
+            <button
+              type="button"
+              class="is-active"
+              data-input-mode="token"
+              aria-pressed="true"
+            >
+              TOKEN AMOUNT
+            </button>
+
+            <button
+              type="button"
+              data-input-mode="usd"
+              aria-pressed="false"
+            >
+              USD AMOUNT
+            </button>
+          </div>
+
+          <div class="terminal-entry">
+            <span class="terminal-prompt">&gt;</span>
+
+            <span class="terminal-prefix" data-input-prefix></span>
+
+            <input
+              id="buyAmount"
+              class="terminal-input"
+              type="text"
+              inputmode="decimal"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="0"
+              aria-label="Amount"
+            />
+
+            <span class="terminal-suffix" data-input-suffix>$LWOLF</span>
+            <span class="terminal-cursor" aria-hidden="true"></span>
+          </div>
+
+          <div class="buy-conversion" aria-live="polite">
+            <p data-conversion-label>YOU PAY</p>
+            <strong data-conversion-value>$0.00 USD</strong>
+          </div>
+
+          <div class="buy-price-line">
+            <span>DEMO PRICE</span>
+            <strong>$0.000742</strong>
+            <span>PER $LWOLF</span>
+          </div>
+
+          <div class="buy-actions">
+            <button class="buy-primary" type="button" data-continue disabled>
+              CONTINUE →
+            </button>
+
+            <button class="buy-clear" type="button" data-clear>
+              CLEAR
+            </button>
+          </div>
+
+          <p class="buy-demo-note">
+            DEMO INTERFACE — NO REAL TRANSACTION IS SUBMITTED.
+          </p>
+        </div>
+
+        <aside class="buy-reaction" aria-hidden="true">
+          <img class="buy-reaction__image" data-reaction-image alt="" />
+          <p data-reaction-copy>THE SHEEP IS WATCHING.</p>
+          <small>BRAND REACTION / NOT A RECOMMENDATION</small>
+        </aside>
+      </section>
+
+      <section class="buy-stage" data-stage="wallet" hidden>
+        <div class="buy-stage__content buy-stage__content--compact">
+          <p class="buy-kicker">02 / WALLET</p>
+
+          <h2>
+            CONNECT<br />
+            <span>THE WALLET.</span>
+          </h2>
+
+          <div class="buy-summary buy-summary--mini">
+            <div>
+              <span>YOU RECEIVE</span>
+              <strong data-wallet-token>—</strong>
+            </div>
+
+            <div>
+              <span>DEMO VALUE</span>
+              <strong data-wallet-usd>—</strong>
+            </div>
+          </div>
+
+          <button class="buy-primary buy-primary--wide" type="button" data-demo-wallet>
+            CONNECT DEMO WALLET →
+          </button>
+
+          <button class="buy-text-action" type="button" data-back-amount>
+            ← CHANGE AMOUNT
+          </button>
+
+          <p class="buy-demo-note">
+            THIS PORTFOLIO DEMO DOES NOT REQUEST WALLET PERMISSIONS.
+          </p>
+        </div>
+      </section>
+
+      <section class="buy-stage" data-stage="confirm" hidden>
+        <div class="buy-stage__content buy-stage__content--compact">
+          <p class="buy-kicker">03 / ORDER SUMMARY</p>
+
+          <h2>
+            CHECK IT<br />
+            <span>ONE MORE TIME.</span>
+          </h2>
+
+          <div class="buy-summary">
+            <div>
+              <span>YOU RECEIVE</span>
+              <strong data-confirm-token>—</strong>
+            </div>
+
+            <div>
+              <span>DEMO VALUE</span>
+              <strong data-confirm-usd>—</strong>
+            </div>
+
+            <div>
+              <span>WALLET</span>
+              <strong>DEMO_WALLET_01</strong>
+            </div>
+
+            <div>
+              <span>NETWORK</span>
+              <strong>LWOLF DEMO</strong>
+            </div>
+          </div>
+
+          <button class="buy-primary buy-primary--wide" type="button" data-confirm>
+            CONFIRM DEMO BUY →
+          </button>
+
+          <button class="buy-text-action" type="button" data-back-wallet>
+            ← BACK
+          </button>
+        </div>
+      </section>
+
+      <section class="buy-stage" data-stage="complete" hidden>
+        <div class="buy-stage__content buy-stage__content--compact">
+          <p class="buy-kicker">04 / COMPLETE</p>
+
+          <h2>
+            WELCOME<br />
+            <span>TO THE PACK.</span>
+          </h2>
+
+          <p class="buy-complete-copy">
+            DEMO COMPLETE.<br />
+            NO REAL TOKEN PURCHASE OR WALLET TRANSACTION OCCURRED.<span class="terminal-cursor terminal-cursor--inline" aria-hidden="true"></span>
+          </p>
+
+          <div class="buy-actions">
+            <button class="buy-primary" type="button" data-start-over>
+              BUY AGAIN →
+            </button>
+
+            <a class="buy-text-action buy-text-action--link" href="/work/lwolf/">
+              ← BACK TO LWOLF
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module">
+      import { initLwolfBuy } from "/shared/lwolf-buy.js";
+      initLwolfBuy();
+    </script>
+  </body>
+</html>

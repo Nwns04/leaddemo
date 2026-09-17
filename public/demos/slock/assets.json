@@ -1,0 +1,18 @@
+{
+  "brandMark": "/demos/slock/slock-mark.png",
+  "agentCore": "/demos/slock/agent-core.png",
+  "agents": {
+    "research": "/demos/slock/agent-research.png",
+    "code": "/demos/slock/agent-code.png",
+    "market": "/demos/slock/agent-market.png",
+    "community": "/demos/slock/agent-community.png"
+  },
+  "objects": {
+    "dataRing": "/demos/slock/data-ring.png",
+    "neuralOrb": "/demos/slock/neural-orb.png",
+    "commandCore": "/demos/slock/command-core.png",
+    "gridFragment01": "/demos/slock/grid-fragment-01.png",
+    "gridFragment02": "/demos/slock/grid-fragment-02.png",
+    "hologramWave": "/demos/slock/hologram-wave.png"
+  }
+}

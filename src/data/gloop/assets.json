@@ -1,0 +1,42 @@
+{
+  "gloop-cutout": {
+    "source": "/demos/gloop/gloop-cutout.png",
+    "web": "/demos/gloop/gloop-cutout.png"
+  },
+  "gloop-droplet": {
+    "source": "/demos/gloop/gloop-droplet.png",
+    "web": "/demos/gloop/gloop-droplet.png"
+  },
+  "gloop-eating-token": {
+    "source": "/demos/gloop/gloop-eating-token.png",
+    "web": "/demos/gloop/gloop-eating-token.png"
+  },
+  "gloop-face": {
+    "source": "/demos/gloop/gloop-face.png",
+    "web": "/demos/gloop/gloop-face.png"
+  },
+  "gloop-hero": {
+    "source": "/demos/gloop/gloop-hero.png",
+    "web": "/demos/gloop/gloop-hero.png"
+  },
+  "gloop-master": {
+    "source": "/demos/gloop/gloop-master.png",
+    "web": "/demos/gloop/gloop-master.png"
+  },
+  "gloop-og": {
+    "source": "/demos/gloop/gloop-og.png",
+    "web": "/demos/gloop/gloop-og.png"
+  },
+  "gloop-squish": {
+    "source": "/demos/gloop/gloop-squish.png",
+    "web": "/demos/gloop/gloop-squish.png"
+  },
+  "gloop-stretch": {
+    "source": "/demos/gloop/gloop-stretch.png",
+    "web": "/demos/gloop/gloop-stretch.png"
+  },
+  "gloop-token": {
+    "source": "/demos/gloop/gloop-token.png",
+    "web": "/demos/gloop/gloop-token.png"
+  }
+}

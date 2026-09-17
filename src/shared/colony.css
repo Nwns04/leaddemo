@@ -1,0 +1,1551 @@
+:root {
+  --colony-bg: #070808;
+  --colony-bg-soft: #0c0c0b;
+  --colony-earth: #17130f;
+  --colony-earth-2: #241b12;
+  --colony-line: rgba(212, 174, 112, 0.19);
+  --colony-text: #ece9df;
+  --colony-muted: #88847b;
+  --colony-amber: #e2b66d;
+  --colony-amber-soft: #9d7340;
+  --colony-display: "Space Grotesk", Arial, sans-serif;
+  --colony-mono: "DM Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--colony-bg);
+}
+
+body.colony-page,
+body.colony-case-page {
+  margin: 0;
+  min-width: 320px;
+  background: var(--colony-bg);
+  color: var(--colony-text);
+  font-family: var(--colony-display);
+  overflow-x: clip;
+}
+
+.colony-page a,
+.colony-case-page a {
+  color: inherit;
+}
+
+.colony-world {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.colony-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  color: var(--colony-text);
+}
+
+.colony-nav .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.colony-nav .wordmark img {
+  width: 24px;
+  height: 24px;
+}
+
+.colony-nav nav a {
+  color: rgba(236, 233, 223, 0.78);
+}
+
+.colony-main {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.colony-main a,
+.colony-main button,
+.holder-inspector,
+.colony-mode-switch,
+.colony-explorer__instruction {
+  pointer-events: auto;
+}
+
+.colony-hero,
+.colony-story,
+.colony-explorer,
+.colony-network,
+.colony-activity,
+.colony-structure,
+.colony-cta {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  padding: clamp(110px, 12vh, 150px) clamp(22px, 4.5vw, 82px) clamp(70px, 8vh, 110px);
+  box-sizing: border-box;
+}
+
+.colony-kicker {
+  margin: 0 0 18px;
+  color: var(--colony-amber);
+  font: 10px/1.3 var(--colony-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.colony-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(320px, 1.2fr);
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(7, 8, 8, 0.96) 0%, rgba(7, 8, 8, 0.7) 38%, transparent 72%),
+    linear-gradient(180deg, rgba(7, 8, 8, 0.08), rgba(7, 8, 8, 0.35));
+}
+
+.colony-hero__copy {
+  max-width: 690px;
+}
+
+.colony-hero h1,
+.colony-story h2,
+.colony-explorer h2,
+.colony-network h2,
+.colony-activity h2,
+.colony-structure h2,
+.colony-cta h2,
+.colony-case h1,
+.colony-case h2 {
+  margin: 0;
+  font-family: var(--colony-display);
+  letter-spacing: -0.085em;
+  line-height: 0.84;
+}
+
+.colony-hero h1 {
+  font-size: clamp(68px, 9.5vw, 168px);
+}
+
+.colony-hero h1 em,
+.colony-story h2 em,
+.colony-explorer h2 em,
+.colony-network h2 em,
+.colony-activity h2 em,
+.colony-structure h2 em,
+.colony-cta h2 em,
+.colony-case h1 em,
+.colony-case h2 em {
+  color: var(--colony-amber);
+  font-style: normal;
+}
+
+.colony-hero__statement {
+  margin: 24px 0 0;
+  color: rgba(236, 233, 223, 0.72);
+  font-size: clamp(18px, 2vw, 30px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.colony-copy,
+.colony-section-copy > p:last-child,
+.colony-cta > p:not(.colony-kicker):not(.colony-disclaimer),
+.case-copy {
+  max-width: 470px;
+  color: var(--colony-muted);
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.6;
+}
+
+.colony-copy {
+  margin-top: 28px;
+}
+
+.colony-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.colony-actions--center {
+  justify-content: center;
+}
+
+.colony-button,
+.colony-text-link {
+  font: 10px/1.2 var(--colony-mono);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.colony-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-width: 210px;
+  padding: 16px 18px;
+  border: 1px solid rgba(226, 182, 109, 0.54);
+  background: rgba(226, 182, 109, 0.055);
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.colony-button:hover,
+.colony-button:focus-visible {
+  background: rgba(226, 182, 109, 0.12);
+  border-color: var(--colony-amber);
+}
+
+.colony-button--light {
+  color: var(--colony-bg);
+  background: var(--colony-text);
+  border-color: var(--colony-text);
+}
+
+.colony-data-label {
+  color: var(--colony-muted);
+  font: 9px/1.2 var(--colony-mono);
+  letter-spacing: 0.1em;
+}
+
+.colony-hero__metrics {
+  position: absolute;
+  right: clamp(22px, 4.5vw, 82px);
+  bottom: 42px;
+  display: flex;
+  gap: clamp(24px, 4vw, 72px);
+}
+
+.colony-hero__metrics div {
+  display: grid;
+  gap: 7px;
+  min-width: 86px;
+}
+
+.colony-hero__metrics span,
+.colony-story-number span,
+.colony-network__readout span,
+.colony-network__readout small,
+.structure-legend,
+.colony-explorer__instruction,
+.activity-readouts span,
+.case-meta span,
+.case-index,
+.case-tech {
+  font: 9px/1.3 var(--colony-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--colony-muted);
+}
+
+.colony-hero__metrics strong {
+  font-size: clamp(22px, 2.5vw, 38px);
+  font-weight: 500;
+}
+
+.colony-scroll-cue {
+  position: absolute;
+  left: clamp(22px, 4.5vw, 82px);
+  bottom: 34px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--colony-muted);
+  font: 9px var(--colony-mono);
+  letter-spacing: 0.12em;
+}
+
+.colony-scroll-cue i {
+  width: 42px;
+  height: 1px;
+  background: var(--colony-amber);
+}
+
+.colony-story {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(280px, 1.2fr);
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(7, 8, 8, 0.9), rgba(7, 8, 8, 0.18) 55%, transparent);
+}
+
+.colony-section-copy {
+  max-width: 760px;
+}
+
+.colony-story h2,
+.colony-explorer h2,
+.colony-network h2,
+.colony-activity h2,
+.colony-structure h2,
+.colony-cta h2,
+.colony-case h2 {
+  font-size: clamp(48px, 6.6vw, 118px);
+}
+
+.colony-story-number {
+  justify-self: end;
+  align-self: end;
+  display: grid;
+  gap: 10px;
+  margin-bottom: 8vh;
+  text-align: right;
+}
+
+.colony-story-number strong {
+  font-size: clamp(74px, 10vw, 180px);
+  line-height: 0.8;
+  letter-spacing: -0.09em;
+  color: rgba(226, 182, 109, 0.78);
+}
+
+.colony-explorer {
+  min-height: 130svh;
+  background:
+    linear-gradient(180deg, rgba(7, 8, 8, 0.72) 0%, rgba(7, 8, 8, 0.12) 28%, rgba(7, 8, 8, 0.16) 72%, rgba(7, 8, 8, 0.78) 100%);
+}
+
+.colony-explorer__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.colony-mode-switch {
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--colony-line);
+  background: rgba(7, 8, 8, 0.62);
+  backdrop-filter: blur(12px);
+}
+
+.colony-mode-switch button {
+  appearance: none;
+  border: 0;
+  padding: 11px 14px;
+  background: transparent;
+  color: var(--colony-muted);
+  font: 9px var(--colony-mono);
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.colony-mode-switch button.is-active {
+  color: var(--colony-bg);
+  background: var(--colony-amber);
+}
+
+.colony-explorer__instruction {
+  position: absolute;
+  left: clamp(22px, 4.5vw, 82px);
+  bottom: 42px;
+  display: grid;
+  gap: 8px;
+}
+
+.colony-explorer__instruction strong {
+  color: var(--colony-text);
+  font-weight: 400;
+}
+
+.holder-inspector {
+  position: absolute;
+  right: clamp(22px, 4.5vw, 82px);
+  top: 48%;
+  width: min(360px, calc(100vw - 44px));
+  padding: 22px;
+  border: 1px solid rgba(226, 182, 109, 0.22);
+  background: rgba(9, 9, 8, 0.82);
+  backdrop-filter: blur(20px);
+  transform: translateY(-50%) translateX(120%);
+  opacity: 0;
+  transition: transform 320ms cubic-bezier(.2,.8,.2,1), opacity 220ms ease;
+  pointer-events: none;
+}
+
+.holder-inspector.is-open {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.holder-inspector__close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  color: var(--colony-muted);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.holder-inspector > p,
+.holder-inspector__demo {
+  margin: 0;
+  color: var(--colony-muted);
+  font: 9px var(--colony-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.holder-inspector h3 {
+  margin: 14px 0 22px;
+  font: 500 clamp(26px, 2.3vw, 36px)/1 var(--colony-display);
+  letter-spacing: -0.05em;
+}
+
+.holder-inspector dl {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 22px;
+}
+
+.holder-inspector dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 11px;
+  border-top: 1px solid var(--colony-line);
+}
+
+.holder-inspector dt,
+.holder-inspector dd {
+  margin: 0;
+  font: 9px/1.3 var(--colony-mono);
+  letter-spacing: 0.1em;
+}
+
+.holder-inspector dt {
+  color: var(--colony-muted);
+}
+
+.holder-inspector dd {
+  color: var(--colony-text);
+  text-align: right;
+}
+
+.holder-tooltip {
+  position: fixed;
+  z-index: 100;
+  min-width: 150px;
+  padding: 10px 12px;
+  border-left: 1px solid var(--colony-amber);
+  background: rgba(7, 8, 8, 0.9);
+  pointer-events: none;
+  backdrop-filter: blur(12px);
+}
+
+.holder-tooltip strong,
+.holder-tooltip span,
+.holder-tooltip small {
+  display: block;
+  font: 9px/1.4 var(--colony-mono);
+  letter-spacing: 0.08em;
+}
+
+.holder-tooltip span {
+  margin-top: 4px;
+  color: var(--colony-amber);
+}
+
+.holder-tooltip small {
+  color: var(--colony-muted);
+}
+
+.colony-network {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(7, 8, 8, 0.94), rgba(7, 8, 8, 0.28) 52%, transparent);
+}
+
+.colony-network__readout {
+  justify-self: end;
+  display: grid;
+  gap: 11px;
+  width: min(440px, 100%);
+  padding-left: 22px;
+  border-left: 1px solid var(--colony-line);
+}
+
+.colony-network__readout strong {
+  font-size: clamp(22px, 2.5vw, 40px);
+  font-weight: 500;
+}
+
+.colony-activity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background:
+    linear-gradient(180deg, rgba(7, 8, 8, 0.72), rgba(7, 8, 8, 0.14) 50%, rgba(7, 8, 8, 0.8));
+}
+
+.activity-readouts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  width: min(1200px, 100%);
+  margin-left: auto;
+  background: var(--colony-line);
+}
+
+.activity-readouts article {
+  min-height: 180px;
+  padding: 22px;
+  background: rgba(8, 9, 8, 0.83);
+}
+
+.activity-readouts strong {
+  display: block;
+  margin-top: 46px;
+  font-size: 18px;
+}
+
+.activity-readouts p {
+  color: var(--colony-muted);
+  line-height: 1.5;
+}
+
+.colony-structure {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(226, 182, 109, 0.06), transparent 36%),
+    linear-gradient(180deg, rgba(7, 8, 8, 0.2), rgba(7, 8, 8, 0.8));
+}
+
+.colony-section-copy--center {
+  margin: 0 auto;
+}
+
+.structure-legend {
+  position: absolute;
+  left: 50%;
+  bottom: 54px;
+  display: flex;
+  gap: 28px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.structure-legend div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.structure-legend i {
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--colony-amber);
+  border-radius: 50%;
+}
+
+.colony-cta {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(7, 8, 8, 0.72), rgba(7, 8, 8, 0.96)),
+    radial-gradient(circle at center, rgba(226, 182, 109, 0.1), transparent 42%);
+}
+
+.colony-cta > p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.colony-text-link {
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--colony-line);
+}
+
+.colony-disclaimer {
+  max-width: 560px !important;
+  margin-top: 34px !important;
+  color: rgba(136, 132, 123, 0.7) !important;
+  font: 9px/1.6 var(--colony-mono) !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.colony-footer {
+  position: relative;
+  z-index: 4;
+  background: #070808;
+  border-top: 1px solid var(--colony-line);
+}
+
+/* Case study */
+
+.colony-case-page {
+  background:
+    radial-gradient(circle at 75% 12%, rgba(226, 182, 109, 0.07), transparent 24%),
+    var(--colony-bg);
+}
+
+.colony-nav--case {
+  position: absolute;
+}
+
+.colony-case {
+  width: 100%;
+}
+
+.colony-case-hero,
+.case-chapter,
+.case-board,
+.case-system-grid,
+.case-tech,
+.colony-case-end {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: clamp(22px, 4.5vw, 82px);
+  padding-right: clamp(22px, 4.5vw, 82px);
+}
+
+.colony-case-hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
+.colony-case h1 {
+  font-size: clamp(72px, 10.8vw, 190px);
+}
+
+.case-meta {
+  justify-self: end;
+  width: min(420px, 100%);
+  display: grid;
+  gap: 8px;
+  padding-left: 18px;
+  border-left: 1px solid var(--colony-line);
+}
+
+.case-meta strong {
+  margin-bottom: 18px;
+  font: 500 15px/1.4 var(--colony-display);
+}
+
+.case-chapter {
+  min-height: 70svh;
+  display: grid;
+  grid-template-columns: 80px 1fr minmax(280px, 0.72fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 70px);
+  padding-top: 90px;
+  padding-bottom: 90px;
+  border-top: 1px solid var(--colony-line);
+}
+
+.case-index {
+  align-self: start;
+  margin-top: 6px;
+  color: var(--colony-amber);
+}
+
+.case-board {
+  min-height: 70svh;
+  margin: 0;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  border-top: 1px solid var(--colony-line);
+  border-bottom: 1px solid var(--colony-line);
+  background:
+    linear-gradient(135deg, rgba(226, 182, 109, 0.035), transparent 45%),
+    #0b0b0a;
+}
+
+.case-board--identity {
+  display: grid;
+  grid-template-columns: 0.45fr 1fr;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+}
+
+.case-board--identity img {
+  width: min(340px, 80%);
+}
+
+.case-board--identity div span {
+  display: block;
+  color: var(--colony-amber);
+  font: 10px var(--colony-mono);
+  letter-spacing: 0.14em;
+}
+
+.case-board--identity div strong {
+  display: block;
+  margin-top: 20px;
+  font-size: clamp(56px, 7vw, 128px);
+  line-height: 0.86;
+  letter-spacing: -0.08em;
+}
+
+.case-board--identity small {
+  grid-column: 1 / -1;
+  color: var(--colony-muted);
+  font: 9px var(--colony-mono);
+  letter-spacing: 0.12em;
+}
+
+.case-system-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: var(--colony-line);
+}
+
+.case-system-grid article {
+  min-height: 300px;
+  padding: 28px 22px;
+  background: var(--colony-bg);
+}
+
+.case-system-grid span {
+  color: var(--colony-amber);
+  font: 10px var(--colony-mono);
+}
+
+.case-system-grid strong {
+  display: block;
+  margin-top: 90px;
+}
+
+.case-system-grid p {
+  color: var(--colony-muted);
+  line-height: 1.55;
+}
+
+.case-board--modes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: var(--colony-line);
+}
+
+.mode-plate {
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 26px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(226, 182, 109, 0.1), transparent 24%),
+    #0a0a09;
+}
+
+.mode-plate span {
+  color: var(--colony-muted);
+  font: 10px var(--colony-mono);
+  letter-spacing: 0.14em;
+}
+
+.mode-plate b {
+  font-size: clamp(34px, 4vw, 72px);
+  letter-spacing: -0.07em;
+}
+
+.case-tech {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  border-top: 1px solid var(--colony-line);
+  border-bottom: 1px solid var(--colony-line);
+}
+
+.case-tech span {
+  padding: 12px 14px;
+  border: 1px solid var(--colony-line);
+}
+
+.colony-case-end {
+  min-height: 80svh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.colony-case-end .colony-button {
+  margin-top: 34px;
+}
+
+@media (max-width: 980px) {
+  .colony-hero,
+  .colony-story,
+  .colony-network,
+  .colony-case-hero,
+  .case-chapter {
+    grid-template-columns: 1fr;
+  }
+
+  .colony-hero {
+    align-items: start;
+    padding-top: 130px;
+    background:
+      linear-gradient(180deg, rgba(7, 8, 8, 0.95) 0%, rgba(7, 8, 8, 0.52) 55%, rgba(7, 8, 8, 0.08));
+  }
+
+  .colony-hero__copy {
+    max-width: 760px;
+  }
+
+  .colony-hero__metrics {
+    right: auto;
+    left: clamp(22px, 4.5vw, 82px);
+  }
+
+  .colony-story-number,
+  .colony-network__readout {
+    justify-self: start;
+    text-align: left;
+  }
+
+  .activity-readouts,
+  .case-system-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-meta {
+    justify-self: start;
+  }
+
+  .case-chapter {
+    grid-template-columns: 60px 1fr;
+  }
+
+  .case-chapter .case-copy {
+    grid-column: 2;
+  }
+
+  .case-board--identity {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .colony-nav nav:not(.mobile-nav) {
+    display: none;
+  }
+
+  .colony-hero,
+  .colony-story,
+  .colony-explorer,
+  .colony-network,
+  .colony-activity,
+  .colony-structure,
+  .colony-cta {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .colony-hero h1 {
+    font-size: clamp(64px, 20vw, 94px);
+  }
+
+  .colony-story h2,
+  .colony-explorer h2,
+  .colony-network h2,
+  .colony-activity h2,
+  .colony-structure h2,
+  .colony-cta h2,
+  .colony-case h2 {
+    font-size: clamp(44px, 14vw, 74px);
+  }
+
+  .colony-hero__metrics {
+    left: 18px;
+    right: 18px;
+    gap: 18px;
+    justify-content: space-between;
+  }
+
+  .colony-scroll-cue {
+    display: none;
+  }
+
+  .colony-explorer {
+    min-height: 150svh;
+  }
+
+  .colony-explorer__top {
+    display: grid;
+    gap: 22px;
+  }
+
+  .colony-mode-switch {
+    justify-self: start;
+  }
+
+  .holder-inspector {
+    position: fixed;
+    z-index: 80;
+    top: auto;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    transform: translateY(120%);
+  }
+
+  .holder-inspector.is-open {
+    transform: translateY(0);
+  }
+
+  .activity-readouts,
+  .case-system-grid,
+  .case-board--modes {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-readouts article {
+    min-height: 140px;
+  }
+
+  .activity-readouts strong {
+    margin-top: 28px;
+  }
+
+  .structure-legend {
+    left: 18px;
+    right: 18px;
+    bottom: 30px;
+    transform: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    white-space: normal;
+  }
+
+  .colony-case-hero,
+  .case-chapter,
+  .case-board,
+  .case-system-grid,
+  .case-tech,
+  .colony-case-end {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .colony-case h1 {
+    font-size: clamp(68px, 21vw, 104px);
+  }
+
+  .case-chapter {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .case-chapter .case-copy {
+    grid-column: auto;
+  }
+
+  .case-board--identity img {
+    width: 180px;
+  }
+
+  .mode-plate {
+    min-height: 280px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .holder-inspector {
+    transition: none;
+  }
+}
+
+
+/* ========================================================================
+   COLONY CRYPTO + FLUID-ASSET LAYER
+   ======================================================================== */
+
+.colony-main .crypto-market-strip,
+.colony-main .wallet-identity,
+.colony-main .wallet-colony-panel,
+.colony-main .crypto-live-activity {
+  pointer-events: auto;
+}
+
+.colony-nav {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 42px);
+}
+
+.colony-nav__links {
+  justify-self: center;
+}
+
+.crypto-nav-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.chain-badge,
+.contract-chip,
+.wallet-button {
+  min-height: 34px;
+  border: 1px solid rgba(226, 182, 109, 0.2);
+  background: rgba(7, 8, 8, 0.62);
+  color: var(--colony-muted);
+  backdrop-filter: blur(14px);
+  font: 8px/1 var(--colony-mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.chain-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+}
+
+.chain-badge i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--colony-amber);
+  box-shadow: 0 0 10px rgba(226, 182, 109, 0.72);
+}
+
+.contract-chip,
+.wallet-button {
+  appearance: none;
+  cursor: pointer;
+}
+
+.contract-chip {
+  padding: 0 10px;
+}
+
+.contract-chip span {
+  color: var(--colony-text);
+}
+
+.contract-chip.is-copied {
+  color: var(--colony-amber);
+  border-color: rgba(226, 182, 109, 0.6);
+}
+
+.wallet-button {
+  padding: 0 13px;
+  color: var(--colony-bg);
+  background: var(--colony-amber);
+  border-color: var(--colony-amber);
+  font-weight: 700;
+}
+
+.wallet-button.is-connected {
+  color: var(--colony-text);
+  background: rgba(226, 182, 109, 0.08);
+}
+
+.crypto-market-strip {
+  position: absolute;
+  left: clamp(22px, 4.5vw, 82px);
+  right: clamp(22px, 4.5vw, 82px);
+  bottom: 94px;
+  z-index: 6;
+
+  display: grid;
+  grid-template-columns:
+    repeat(5, minmax(80px, 0.65fr))
+    minmax(180px, 1.2fr);
+
+  width: min(1180px, calc(100% - clamp(44px, 9vw, 164px)));
+
+  border-top: 1px solid rgba(226, 182, 109, 0.22);
+  border-bottom: 1px solid rgba(226, 182, 109, 0.12);
+  background: linear-gradient(
+    90deg,
+    rgba(7, 8, 8, 0.82),
+    rgba(7, 8, 8, 0.42)
+  );
+  backdrop-filter: blur(12px);
+}
+
+.crypto-market-strip > div {
+  min-width: 0;
+  padding: 11px 14px;
+  border-right: 1px solid rgba(226, 182, 109, 0.1);
+}
+
+.crypto-market-strip span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--colony-muted);
+  font: 7px/1.1 var(--colony-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.crypto-market-strip strong {
+  display: block;
+  overflow: hidden;
+  color: var(--colony-text);
+  font-size: clamp(12px, 1.1vw, 16px);
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.crypto-market-strip__contract button {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--colony-text);
+  cursor: pointer;
+  font: 10px/1.2 var(--colony-mono);
+  letter-spacing: 0.07em;
+}
+
+.crypto-market-strip__contract b {
+  margin-left: 8px;
+  color: var(--colony-amber);
+  font-size: 7px;
+}
+
+.wallet-identity {
+  position: absolute;
+  right: clamp(22px, 4.5vw, 82px);
+  top: clamp(120px, 18vh, 180px);
+  z-index: 8;
+
+  display: grid;
+  gap: 5px;
+
+  min-width: 180px;
+  padding: 12px 14px;
+
+  border-left: 1px solid var(--colony-amber);
+  background: rgba(7, 8, 8, 0.58);
+  backdrop-filter: blur(12px);
+}
+
+.wallet-identity[hidden],
+.wallet-colony-panel[hidden] {
+  display: none;
+}
+
+.wallet-identity span,
+.wallet-identity small,
+.wallet-colony-panel span,
+.wallet-colony-panel small {
+  color: var(--colony-muted);
+  font: 8px/1.25 var(--colony-mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.wallet-identity strong {
+  color: var(--colony-text);
+  font: 500 17px/1.1 var(--colony-display);
+}
+
+.wallet-colony-panel {
+  position: absolute;
+  right: clamp(22px, 4.5vw, 82px);
+  top: 29%;
+  z-index: 10;
+
+  display: grid;
+  gap: 7px;
+
+  width: min(270px, calc(100vw - 44px));
+  padding: 14px 16px;
+
+  border-top: 1px solid rgba(226, 182, 109, 0.45);
+  border-bottom: 1px solid rgba(226, 182, 109, 0.15);
+  background: rgba(7, 8, 8, 0.58);
+  backdrop-filter: blur(14px);
+}
+
+.wallet-colony-panel strong {
+  color: var(--colony-amber);
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.crypto-live-activity {
+  width: min(1220px, 100%);
+  margin: auto 0 34px auto;
+  border-top: 1px solid var(--colony-line);
+  border-bottom: 1px solid var(--colony-line);
+  background: rgba(7, 8, 8, 0.48);
+  backdrop-filter: blur(10px);
+}
+
+.crypto-live-activity__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(226, 182, 109, 0.1);
+  color: var(--colony-muted);
+  font: 8px/1.2 var(--colony-mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.crypto-live-activity__head span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.crypto-live-activity__head i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--colony-amber);
+  box-shadow: 0 0 10px rgba(226, 182, 109, 0.8);
+}
+
+.crypto-live-activity__rows {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.crypto-live-activity__rows > div {
+  position: relative;
+  display: grid;
+  gap: 6px;
+  min-height: 72px;
+  padding: 14px;
+  border-right: 1px solid rgba(226, 182, 109, 0.09);
+  overflow: hidden;
+}
+
+.crypto-live-activity__rows > div::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--colony-amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms ease;
+}
+
+.crypto-live-activity__rows > div.is-live::before {
+  transform: scaleX(1);
+}
+
+.crypto-live-activity__rows span,
+.crypto-live-activity__rows small {
+  color: var(--colony-muted);
+  font: 7px/1.15 var(--colony-mono);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.crypto-live-activity__rows strong {
+  color: var(--colony-text);
+  font-size: clamp(11px, 1vw, 14px);
+  font-weight: 500;
+}
+
+.crypto-live-activity__rows > div.is-live strong {
+  color: var(--colony-amber);
+}
+
+/* Give the WebGL world more opportunities to show through between sections. */
+.colony-story,
+.colony-explorer,
+.colony-network,
+.colony-activity,
+.colony-structure {
+  background-color: transparent;
+}
+
+.colony-story {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 8, 8, 0.92),
+      rgba(7, 8, 8, 0.4) 42%,
+      rgba(7, 8, 8, 0.08) 72%,
+      transparent
+    );
+}
+
+.colony-network {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 8, 8, 0.92),
+      rgba(7, 8, 8, 0.38) 44%,
+      rgba(7, 8, 8, 0.06) 78%,
+      transparent
+    );
+}
+
+.colony-activity {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 8, 8, 0.76),
+      rgba(7, 8, 8, 0.14) 45%,
+      rgba(7, 8, 8, 0.72)
+    );
+}
+
+@media (max-width: 1100px) {
+  .chain-badge,
+  .contract-chip {
+    display: none;
+  }
+
+  .crypto-market-strip {
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+    width: calc(100% - clamp(44px, 9vw, 164px));
+  }
+
+  .crypto-market-strip > div:nth-child(4),
+  .crypto-market-strip > div:nth-child(5),
+  .crypto-market-strip__contract {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .colony-nav {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .colony-nav__links,
+  .crypto-nav-tools {
+    display: none;
+  }
+
+  .crypto-market-strip {
+    left: 18px;
+    right: 18px;
+    bottom: 82px;
+    width: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .crypto-market-strip > div {
+    padding: 9px 8px;
+  }
+
+  .crypto-market-strip strong {
+    font-size: 11px;
+  }
+
+  .wallet-identity {
+    right: 18px;
+    top: auto;
+    bottom: 180px;
+  }
+
+  .wallet-colony-panel {
+    right: 18px;
+    top: 34%;
+  }
+
+  .crypto-live-activity__head small {
+    display: none;
+  }
+
+  .crypto-live-activity__rows {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .crypto-live-activity__rows > div {
+    min-height: 62px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crypto-live-activity__rows > div::before {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   DESKTOP NAV CLEANUP
+   Prevent mobile navigation from leaking into desktop layout
+   ========================================================= */
+
+@media (min-width: 681px) {
+  .colony-nav .mobile-nav,
+  .colony-nav .menu-toggle {
+    display: none !important;
+  }
+}
+/* =========================================================
+   COLONY HERO HUD LAYOUT FIX
+   Prevent market strip / metrics / CTA from overlapping
+   ========================================================= */
+
+@media (min-width: 681px) {
+  .colony-hero {
+    /* Give the hero enough physical height for copy + crypto HUD */
+    min-height: max(820px, 100svh);
+
+    /* Reserve the bottom of the section for HUD elements */
+    padding-top: 130px;
+    padding-bottom: 250px;
+
+    /* Keep hero copy toward the top instead of vertically centering
+       it into the market strip */
+    align-items: start;
+  }
+
+  .colony-hero__copy {
+    align-self: start;
+    margin-top: clamp(10px, 3vh, 40px);
+  }
+
+  /* Market information gets its own row */
+  .crypto-market-strip {
+    left: clamp(22px, 4.5vw, 82px);
+    right: clamp(22px, 4.5vw, 82px);
+
+    width: auto;
+
+    bottom: 105px;
+
+    z-index: 8;
+  }
+
+  /* Holder / active / cluster metrics sit UNDER the market bar */
+  .colony-hero__metrics {
+    left: auto;
+    right: clamp(22px, 4.5vw, 82px);
+
+    bottom: 28px;
+
+    z-index: 8;
+
+    align-items: end;
+  }
+
+  /* Scroll cue lives on the opposite side of the metrics */
+  .colony-scroll-cue {
+    left: clamp(22px, 4.5vw, 82px);
+    bottom: 34px;
+
+    z-index: 8;
+  }
+
+  /*
+   * Normal-flow CTA must remain above the reserved HUD region.
+   * This prevents EXPLORE THE COLONY from getting covered by
+   * the market strip.
+   */
+  .colony-hero .colony-actions {
+    margin-top: 28px;
+    margin-bottom: 0;
+  }
+}
+
+
+/* =========================================================
+   SHORT DESKTOP / LAPTOP VIEWPORTS
+   ========================================================= */
+
+@media (min-width: 681px) and (max-height: 720px) {
+  .colony-hero {
+    min-height: 820px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   Don't use absolute HUD stacking on small screens.
+   ========================================================= */
+
+@media (max-width: 680px) {
+  .colony-hero {
+    min-height: auto;
+    padding-bottom: 70px;
+  }
+
+  .crypto-market-strip {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: 100%;
+
+    margin-top: 38px;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .colony-hero__metrics {
+    position: relative;
+
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    margin-top: 28px;
+
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}
+/* Fix light CTA text being white-on-white */
+.colony-page a.colony-button--light,
+.colony-case-page a.colony-button--light {
+  color: var(--colony-bg);
+}
+
+.colony-page a.colony-button--light span,
+.colony-case-page a.colony-button--light span {
+  color: inherit;
+}
