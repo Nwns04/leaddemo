@@ -369,6 +369,26 @@
       transition: transform .8s cubic-bezier(.2,.8,.2,1);
     }
 
+    .tdb-feature__media {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: #17130d;
+    }
+
+    .tdb-feature__media iframe {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 160%;
+      height: 160%;
+      border: 0;
+      pointer-events: none;
+      transform: scale(.625);
+      transform-origin: 0 0;
+      background: #17130d;
+      filter: saturate(1.02) contrast(1.02);
+    }
+
     .tdb-feature:hover .tdb-feature__image { transform: scale(1.025); }
 
     .tdb-feature::after {
@@ -573,6 +593,7 @@
     }
 
     /* Every card is now an actual visual portal into the project. */
+    .tdb-card--mugi { background: #6ab9ef; }
     .tdb-card--colony { background: #17130d; }
     .tdb-card--slock { background: #0d1010; }
     .tdb-card--lwolf { background: #d8d0c3; }
@@ -581,10 +602,15 @@
     .tdb-card--gloop { background: #dceff4; }
     .tdb-card--moonrat { background: #d7bd69; }
 
+    .tdb-card--mugi .tdb-card__media img { object-position: 56% 50%; }
     .tdb-card--lwolf .tdb-card__media img { object-position: 50% 42%; }
     .tdb-card--barkbyte .tdb-card__media img { object-position: 52% 50%; }
     .tdb-card--gloop .tdb-card__media img { object-position: 50% 50%; }
     .tdb-card--moonrat .tdb-card__media img { object-position: 52% 50%; }
+
+    .tdb-card--mugi .tdb-card__media::after {
+      background: linear-gradient(180deg, rgba(14,35,60,.01), rgba(14,35,60,.08) 48%, rgba(14,35,60,.82));
+    }
 
     .tdb-card--colony .tdb-card__media::after {
       background: linear-gradient(180deg, rgba(12,10,6,.08), rgba(12,10,6,.12) 48%, rgba(12,10,6,.94));
@@ -796,23 +822,25 @@
       <div class="tdb-section-top">
         <div>
           <p class="tdb-section-label">Featured world / 01</p>
-          <h2>Start with MUGI.</h2>
+          <h2>Enter COLONY.</h2>
         </div>
-        <p class="tdb-section-note">A character-led token world designed as a living brand system rather than another disposable coin landing page.</p>
+        <p class="tdb-section-note">A living on-chain world where wallets become identifiable nodes and holders become part of the colony.</p>
       </div>
 
-      <a class="tdb-feature" href="/work/mugi/" aria-label="Enter the MUGI project">
-        <img class="tdb-feature__image" src="/demos/mugi/mugi-main.png" alt="MUGI character world" />
+      <a class="tdb-feature" href="/work/colony/" aria-label="Enter the COLONY project">
+        <div class="tdb-feature__media" aria-hidden="true">
+          <iframe data-project-preview="/work/colony/" title="" loading="lazy"></iframe>
+        </div>
 
         <div class="tdb-feature__top">
-          <span class="tdb-feature__badge">Character world / Web3</span>
+          <span class="tdb-feature__badge">On-chain world / WebGL</span>
           <span class="tdb-feature__badge">TODEVBUILD / Featured</span>
         </div>
 
         <div class="tdb-feature__bottom">
           <div class="tdb-feature__copy">
-            <h3>MUGI</h3>
-            <p>Character system · token world · interactive launch experience</p>
+            <h3>COLONY</h3>
+            <p>Living holder network · wallet identity · interactive WebGL experience</p>
           </div>
           <span class="tdb-feature__enter">Enter<br />project ↗</span>
         </div>
@@ -829,18 +857,18 @@
       </div>
 
       <div class="tdb-grid">
-        <a class="tdb-card tdb-card--wide tdb-card--colony" href="/work/colony/">
-          <div class="tdb-card__media" aria-hidden="true">
-            <iframe data-project-preview="/work/colony/" title="" loading="lazy"></iframe>
+        <a class="tdb-card tdb-card--wide tdb-card--mugi" href="/work/mugi/">
+          <div class="tdb-card__media">
+            <img src="/demos/mugi/optimized/mugi-main.webp" alt="MUGI standing in a floating Japanese future world" loading="lazy" />
           </div>
           <div class="tdb-card__inside">
             <div class="tdb-card__top">
-              <span class="tdb-card__pill">02 / On-chain experience</span>
+              <span class="tdb-card__pill">02 / Character world</span>
               <span class="tdb-card__index">Open ↗</span>
             </div>
             <div class="tdb-card__bottom">
-              <h3>COLONY</h3>
-              <p>Living holder network · WebGL · wallet visualization</p>
+              <h3>MUGI</h3>
+              <p>Character system · token world · interactive Web3 launch experience</p>
             </div>
           </div>
         </a>
