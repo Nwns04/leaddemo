@@ -92,13 +92,35 @@
     .tdb-social::after { content: "↗"; font-size: .9em; }
 
     .tdb-hero {
-      min-height: min(810px, calc(100svh - 74px));
+      min-height: min(840px, calc(100svh - 74px));
       display: grid;
-      grid-template-columns: 1.24fr .76fr;
-      gap: clamp(30px, 5vw, 90px);
-      align-items: end;
-      padding: clamp(72px, 10vw, 150px) 0 clamp(64px, 8vw, 112px);
+      grid-template-columns: minmax(0, 1.06fr) minmax(360px, .94fr);
+      gap: clamp(30px, 5vw, 86px);
+      align-items: center;
+      padding: clamp(66px, 8vw, 118px) 0 clamp(62px, 7vw, 102px);
       border-bottom: 1px solid var(--tdb-line);
+      position: relative;
+      isolation: isolate;
+    }
+
+    .tdb-hero::before {
+      content: "";
+      position: absolute;
+      width: min(52vw, 760px);
+      aspect-ratio: 1;
+      right: -10%;
+      top: 50%;
+      translate: 0 -50%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(157,200,232,.24) 0, rgba(157,200,232,.08) 48%, transparent 70%);
+      filter: blur(8px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .tdb-hero__copy {
+      position: relative;
+      z-index: 3;
     }
 
     .tdb-hero__eyebrow,
@@ -128,10 +150,10 @@
     }
 
     .tdb-hero h1 {
-      max-width: 1050px;
+      max-width: 820px;
       margin: 0;
-      font: 900 clamp(4.5rem, 10.6vw, 10.6rem)/.78 Arial, Helvetica, sans-serif;
-      letter-spacing: -.085em;
+      font: 900 clamp(4rem, 8.1vw, 8.6rem)/.79 Arial, Helvetica, sans-serif;
+      letter-spacing: -.082em;
       text-transform: uppercase;
     }
 
@@ -139,14 +161,10 @@
       color: var(--tdb-orange);
     }
 
-    .tdb-hero__side {
-      padding-bottom: 7px;
-    }
-
     .tdb-hero__lede {
-      max-width: 520px;
-      margin: 0 0 34px;
-      font: 600 clamp(1.12rem, 1.75vw, 1.55rem)/1.35 Arial, Helvetica, sans-serif;
+      max-width: 610px;
+      margin: clamp(24px, 3vw, 38px) 0 26px;
+      font: 600 clamp(1.05rem, 1.45vw, 1.36rem)/1.4 Arial, Helvetica, sans-serif;
       letter-spacing: -.025em;
     }
 
@@ -164,6 +182,142 @@
       letter-spacing: .05em;
       text-transform: uppercase;
       background: rgba(255,255,255,.22);
+    }
+
+
+    .tdb-hero__visual {
+      --tilt-x: 0deg;
+      --tilt-y: 0deg;
+      position: relative;
+      min-height: clamp(440px, 49vw, 690px);
+      display: grid;
+      place-items: center;
+      perspective: 1200px;
+      transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+      transition: transform .25s ease-out;
+      will-change: transform;
+    }
+
+    .tdb-hero__mascot-stage {
+      width: min(100%, 650px);
+      aspect-ratio: 1;
+      position: relative;
+      border-radius: 34% 66% 58% 42% / 46% 40% 60% 54%;
+      background: #6fb1e7;
+      overflow: hidden;
+      box-shadow:
+        0 34px 80px rgba(16,24,43,.16),
+        inset 0 0 0 1px rgba(255,255,255,.58);
+      animation: tdb-stage-morph 11s ease-in-out infinite alternate;
+    }
+
+    .tdb-hero__mascot-float {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      animation: tdb-mascot-float 4.8s ease-in-out infinite;
+      will-change: transform;
+    }
+
+    .tdb-hero__mascot {
+      width: 112%;
+      height: 112%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: saturate(1.02) contrast(1.01);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .tdb-hero__shadow {
+      position: absolute;
+      left: 50%;
+      bottom: -4%;
+      width: 54%;
+      height: 8%;
+      translate: -50% 0;
+      border-radius: 50%;
+      background: rgba(16,24,43,.18);
+      filter: blur(18px);
+      animation: tdb-shadow-breathe 4.8s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    .tdb-hero__signal {
+      position: absolute;
+      top: 10%;
+      right: 20%;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--tdb-orange);
+      box-shadow: 0 0 0 8px rgba(245,154,85,.12);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .tdb-hero__signal::before,
+    .tdb-hero__signal::after {
+      content: "";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 38px;
+      height: 38px;
+      border: 1.5px solid rgba(245,154,85,.7);
+      border-radius: 50%;
+      translate: -50% -50%;
+      animation: tdb-signal-pulse 2.4s ease-out infinite;
+    }
+
+    .tdb-hero__signal::after {
+      animation-delay: 1.2s;
+    }
+
+    .tdb-hero__tag {
+      position: absolute;
+      z-index: 5;
+      padding: 10px 13px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(16,24,43,.14);
+      background: rgba(255,253,247,.88);
+      backdrop-filter: blur(10px);
+      font: 800 .65rem/1 Arial, Helvetica, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 30px rgba(16,24,43,.08);
+      animation: tdb-tag-drift 5.6s ease-in-out infinite;
+    }
+
+    .tdb-hero__tag--web { left: -3%; top: 17%; }
+    .tdb-hero__tag--apps { right: -2%; bottom: 25%; animation-delay: -1.6s; }
+    .tdb-hero__tag--webgl { left: 6%; bottom: 8%; animation-delay: -3.1s; }
+
+    @keyframes tdb-mascot-float {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(-.4deg); }
+      50% { transform: translate3d(0, -15px, 0) rotate(.6deg); }
+    }
+
+    @keyframes tdb-shadow-breathe {
+      0%, 100% { transform: scaleX(.9); opacity: .15; }
+      50% { transform: scaleX(1.08); opacity: .09; }
+    }
+
+    @keyframes tdb-signal-pulse {
+      0% { transform: scale(.4); opacity: .9; }
+      78%, 100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    @keyframes tdb-tag-drift {
+      0%, 100% { transform: translateY(0) rotate(-1deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
+    }
+
+    @keyframes tdb-stage-morph {
+      0% { border-radius: 34% 66% 58% 42% / 46% 40% 60% 54%; }
+      100% { border-radius: 54% 46% 39% 61% / 39% 58% 42% 61%; }
     }
 
     .tdb-feature-wrap {
@@ -316,28 +470,57 @@
     .tdb-card--half { grid-column: span 6; min-height: 520px; }
     .tdb-card--third { grid-column: span 4; min-height: 450px; }
 
-    .tdb-card img {
+    .tdb-card__media {
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .65s cubic-bezier(.2,.8,.2,1);
       z-index: -2;
+      overflow: hidden;
+      background: #171717;
     }
 
-    .tdb-card:hover img { transform: scale(1.035); }
+    .tdb-card__media img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .7s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .tdb-card__media iframe {
+      position: absolute;
+      inset: 0 auto auto 0;
+      width: 200%;
+      height: 200%;
+      border: 0;
+      pointer-events: none;
+      transform: scale(.5);
+      transform-origin: 0 0;
+      background: #111;
+      filter: saturate(.95) contrast(1.02);
+    }
+
+    .tdb-card__media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(5,10,20,.03) 25%, rgba(5,10,20,.14) 58%, rgba(5,10,20,.88) 100%);
+    }
+
+    .tdb-card:hover .tdb-card__media img { transform: scale(1.035); }
 
     .tdb-card::after {
       content: "";
       position: absolute;
       inset: 0;
       z-index: -1;
-      background: linear-gradient(180deg, transparent 34%, rgba(7,13,26,.76) 100%);
       pointer-events: none;
+      background: linear-gradient(180deg, rgba(7,13,26,.02) 18%, rgba(7,13,26,.12) 55%, rgba(7,13,26,.82) 100%);
     }
 
     .tdb-card__inside {
+      position: relative;
+      z-index: 2;
       min-height: inherit;
       display: flex;
       flex-direction: column;
@@ -355,15 +538,24 @@
     .tdb-card__pill {
       padding: 8px 10px 7px;
       border-radius: 999px;
-      background: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.88);
       color: var(--tdb-ink);
       backdrop-filter: blur(12px);
       font: 800 .64rem/1 Arial, Helvetica, sans-serif;
       letter-spacing: .06em;
       text-transform: uppercase;
+      box-shadow: 0 7px 24px rgba(0,0,0,.07);
     }
 
-    .tdb-card__bottom { color: #fff; }
+    .tdb-card__index {
+      color: #fff;
+      text-shadow: 0 1px 10px rgba(0,0,0,.28);
+    }
+
+    .tdb-card__bottom {
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(0,0,0,.24);
+    }
 
     .tdb-card__bottom h3 {
       margin: 0 0 8px;
@@ -380,99 +572,46 @@
       text-transform: uppercase;
     }
 
-    .tdb-card--colony {
-      color: #eadcbc;
-      background:
-        radial-gradient(circle at 66% 38%, rgba(244,176,67,.22) 0 1px, transparent 2px) 0 0/26px 26px,
-        linear-gradient(135deg, #15140f, #44341b 58%, #16130d);
-    }
-
-    .tdb-card--colony::before {
-      content: "COLONY";
-      position: absolute;
-      right: -2%;
-      top: 18%;
-      font: 900 clamp(5rem, 10vw, 11rem)/.7 Arial, Helvetica, sans-serif;
-      letter-spacing: -.08em;
-      color: rgba(244,202,125,.09);
-      transform: rotate(-8deg);
-    }
-
-    .tdb-card--slock {
-      background: #111414;
-      color: #dfffc0;
-    }
-
-    .tdb-card--slock::before {
-      content: "01  READY\A02  READY\A03  READY\A04  READY\A05  READY";
-      white-space: pre;
-      position: absolute;
-      top: 25%;
-      left: 10%;
-      font: 800 clamp(.9rem, 1.4vw, 1.3rem)/2.1 "Courier New", monospace;
-      color: #b9ff5d;
-      opacity: .72;
-    }
-
-    .tdb-card--slock::after {
-      background: linear-gradient(0deg, rgba(8,11,11,.98), rgba(8,11,11,.08) 72%);
-    }
-
-    .tdb-card--lwolf {
-      background: #d8d0c3;
-      color: #211f1d;
-    }
-
-    .tdb-card--lwolf::before {
-      content: "DON'T\A FOLLOW\A THE HERD.";
-      white-space: pre;
-      position: absolute;
-      left: 9%;
-      top: 15%;
-      font: 900 clamp(2.9rem, 6vw, 6.5rem)/.82 Arial, Helvetica, sans-serif;
-      letter-spacing: -.06em;
-      transform: rotate(-3deg);
-    }
-
-    .tdb-card--lwolf::after {
-      background: linear-gradient(0deg, rgba(28,25,22,.86), rgba(28,25,22,0) 58%);
-    }
-
-    .tdb-card--stonks {
-      background:
-        linear-gradient(115deg, rgba(255,255,255,.05), transparent 55%),
-        #5920e8;
-    }
-
-    .tdb-card--stonks::before {
-      content: "↗  ↘  ↗  ↗  ↘  ↗";
-      position: absolute;
-      top: 23%;
-      left: 7%;
-      font: 900 clamp(2.8rem, 7vw, 7.5rem)/1 Arial, Helvetica, sans-serif;
-      letter-spacing: -.13em;
-      color: #e8ff5b;
-      transform: rotate(-7deg);
-    }
-
-    .tdb-card--stonks::after {
-      background: linear-gradient(0deg, rgba(25,8,78,.9), transparent 65%);
-    }
-
+    /* Every card is now an actual visual portal into the project. */
+    .tdb-card--colony { background: #17130d; }
+    .tdb-card--slock { background: #0d1010; }
+    .tdb-card--lwolf { background: #d8d0c3; }
+    .tdb-card--stonks { background: #101010; }
     .tdb-card--barkbyte { background: #94cfee; }
     .tdb-card--gloop { background: #dceff4; }
     .tdb-card--moonrat { background: #d7bd69; }
 
-    .tdb-card--gloop::after {
-      background: linear-gradient(0deg, rgba(23,58,75,.72), rgba(23,58,75,0) 58%);
+    .tdb-card--lwolf .tdb-card__media img { object-position: 50% 42%; }
+    .tdb-card--barkbyte .tdb-card__media img { object-position: 52% 50%; }
+    .tdb-card--gloop .tdb-card__media img { object-position: 50% 50%; }
+    .tdb-card--moonrat .tdb-card__media img { object-position: 52% 50%; }
+
+    .tdb-card--colony .tdb-card__media::after {
+      background: linear-gradient(180deg, rgba(12,10,6,.08), rgba(12,10,6,.12) 48%, rgba(12,10,6,.94));
     }
 
-    .tdb-card--barkbyte::after {
-      background: linear-gradient(0deg, rgba(12,34,59,.78), rgba(12,34,59,0) 56%);
+    .tdb-card--slock .tdb-card__media::after {
+      background: linear-gradient(180deg, rgba(5,8,7,.03), rgba(5,8,7,.18) 50%, rgba(5,8,7,.96));
     }
 
-    .tdb-card--moonrat::after {
-      background: linear-gradient(0deg, rgba(37,25,12,.88), rgba(37,25,12,0) 58%);
+    .tdb-card--stonks .tdb-card__media::after {
+      background: linear-gradient(180deg, rgba(5,5,5,.02), rgba(5,5,5,.12) 48%, rgba(5,5,5,.94));
+    }
+
+    .tdb-card--lwolf .tdb-card__media::after {
+      background: linear-gradient(180deg, rgba(24,20,17,.02), rgba(24,20,17,.08) 42%, rgba(24,20,17,.9));
+    }
+
+    .tdb-card--gloop .tdb-card__media::after {
+      background: linear-gradient(180deg, rgba(23,58,75,.01), rgba(23,58,75,.07) 47%, rgba(23,58,75,.76));
+    }
+
+    .tdb-card--barkbyte .tdb-card__media::after {
+      background: linear-gradient(180deg, rgba(12,34,59,.01), rgba(12,34,59,.08) 45%, rgba(12,34,59,.82));
+    }
+
+    .tdb-card--moonrat .tdb-card__media::after {
+      background: linear-gradient(180deg, rgba(37,25,12,.02), rgba(37,25,12,.08) 44%, rgba(37,25,12,.9));
     }
 
     .tdb-end {
@@ -542,11 +681,12 @@
         min-height: auto;
         grid-template-columns: 1fr;
         align-items: start;
-        padding: 78px 0 68px;
+        padding: 72px 0 70px;
       }
 
-      .tdb-hero h1 { font-size: clamp(4.1rem, 18vw, 7.2rem); }
-      .tdb-hero__side { max-width: 620px; }
+      .tdb-hero h1 { font-size: clamp(4.1rem, 16.5vw, 7.2rem); }
+      .tdb-hero__visual { min-height: 570px; margin-top: 22px; }
+      .tdb-hero__mascot-stage { width: min(88vw, 590px); }
 
       .tdb-section-top { align-items: flex-start; flex-direction: column; }
       .tdb-section-note { max-width: 520px; }
@@ -570,9 +710,15 @@
       .tdb-nav a { font-size: .67rem; }
       .tdb-brand { font-size: .92rem; }
 
-      .tdb-hero { padding-top: 62px; }
-      .tdb-hero h1 { font-size: clamp(3.7rem, 19vw, 6rem); }
-      .tdb-hero__lede { font-size: 1.05rem; }
+      .tdb-hero { padding-top: 56px; }
+      .tdb-hero h1 { font-size: clamp(3.55rem, 17.5vw, 5.5rem); }
+      .tdb-hero__lede { font-size: 1.02rem; margin-top: 22px; }
+      .tdb-hero__visual { min-height: 430px; margin-top: 8px; }
+      .tdb-hero__mascot-stage { width: min(94vw, 440px); }
+      .tdb-hero__tag { font-size: .58rem; padding: 8px 10px 7px; }
+      .tdb-hero__tag--web { left: 0; top: 12%; }
+      .tdb-hero__tag--apps { right: 0; bottom: 20%; }
+      .tdb-hero__tag--webgl { left: 4%; bottom: 5%; }
 
       .tdb-feature-wrap { padding-top: 65px; }
       .tdb-feature { min-height: 600px; border-radius: 22px; }
@@ -591,7 +737,13 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+      .tdb-hero__visual { transform: none !important; }
     }
   </style>
 </head>
@@ -611,12 +763,10 @@
 
   <main>
     <section class="tdb-shell tdb-hero">
-      <div>
+      <div class="tdb-hero__copy">
         <p class="tdb-hero__eyebrow">Creative development / Crypto + Web3</p>
         <h1>We build<br />crypto<br /><span>people feel.</span></h1>
-      </div>
 
-      <div class="tdb-hero__side">
         <p class="tdb-hero__lede">Websites, apps, mini apps, token worlds and WebGL experiences built to make internet-native products feel unmistakably alive.</p>
         <div class="tdb-services" aria-label="Capabilities">
           <span>Websites</span>
@@ -626,6 +776,19 @@
           <span>WebGL</span>
           <span>Launch systems</span>
         </div>
+      </div>
+
+      <div class="tdb-hero__visual" data-tdb-mascot-stage aria-label="TODEVBUILD mascot">
+        <div class="tdb-hero__shadow" aria-hidden="true"></div>
+        <div class="tdb-hero__mascot-stage">
+          <div class="tdb-hero__mascot-float">
+            <img class="tdb-hero__mascot" src="/TD.png" alt="TODEVBUILD TD mascot" />
+          </div>
+          <span class="tdb-hero__signal" aria-hidden="true"></span>
+        </div>
+        <span class="tdb-hero__tag tdb-hero__tag--web">Web / Crypto</span>
+        <span class="tdb-hero__tag tdb-hero__tag--apps">Apps / Mini apps</span>
+        <span class="tdb-hero__tag tdb-hero__tag--webgl">WebGL / Worlds</span>
       </div>
     </section>
 
@@ -667,6 +830,9 @@
 
       <div class="tdb-grid">
         <a class="tdb-card tdb-card--wide tdb-card--colony" href="/work/colony/">
+          <div class="tdb-card__media" aria-hidden="true">
+            <iframe data-project-preview="/work/colony/" title="" loading="lazy"></iframe>
+          </div>
           <div class="tdb-card__inside">
             <div class="tdb-card__top">
               <span class="tdb-card__pill">02 / On-chain experience</span>
@@ -680,6 +846,9 @@
         </a>
 
         <a class="tdb-card tdb-card--tall tdb-card--slock" href="/work/slock/">
+          <div class="tdb-card__media" aria-hidden="true">
+            <iframe data-project-preview="/work/slock/" title="" loading="lazy"></iframe>
+          </div>
           <div class="tdb-card__inside">
             <div class="tdb-card__top">
               <span class="tdb-card__pill">03 / AI Agent OS</span>
@@ -693,6 +862,9 @@
         </a>
 
         <a class="tdb-card tdb-card--tall tdb-card--lwolf" href="/work/lwolf/">
+          <div class="tdb-card__media">
+            <img src="/demos/lwolf/assets/campaign/lwolf-launch-poster.png" alt="LWOLF sheep and wolf campaign artwork" loading="lazy" />
+          </div>
           <div class="tdb-card__inside">
             <div class="tdb-card__top">
               <span class="tdb-card__pill">04 / Meme brand</span>
@@ -706,6 +878,9 @@
         </a>
 
         <a class="tdb-card tdb-card--wide tdb-card--stonks" href="/work/stonks/">
+          <div class="tdb-card__media" aria-hidden="true">
+            <iframe data-project-preview="/work/stonks/" title="" loading="lazy"></iframe>
+          </div>
           <div class="tdb-card__inside">
             <div class="tdb-card__top">
               <span class="tdb-card__pill">05 / Consumer crypto</span>
@@ -719,7 +894,9 @@
         </a>
 
         <a class="tdb-card tdb-card--third tdb-card--barkbyte" href="/work/barkbyte/">
-          <img src="/demos/barkbyte/barkbyte-og.png" alt="BARKBYTE cyber dog world" />
+          <div class="tdb-card__media">
+            <img src="/demos/barkbyte/barkbyte-og.png" alt="BARKBYTE cyber dog world" loading="lazy" />
+          </div>
           <div class="tdb-card__inside">
             <div class="tdb-card__top">
               <span class="tdb-card__pill">06 / Character site</span>
@@ -733,7 +910,9 @@
         </a>
 
         <a class="tdb-card tdb-card--third tdb-card--gloop" href="/work/gloop/">
-          <img src="/demos/gloop/gloop-og.png" alt="GLOOP liquid character world" />
+          <div class="tdb-card__media">
+            <img src="/demos/gloop/gloop-og.png" alt="GLOOP liquid character world" loading="lazy" />
+          </div>
           <div class="tdb-card__inside">
             <div class="tdb-card__top">
               <span class="tdb-card__pill">07 / Experimental site</span>
@@ -747,7 +926,9 @@
         </a>
 
         <a class="tdb-card tdb-card--third tdb-card--moonrat" href="/work/moonrat/">
-          <img src="/demos/moonrat/moonrat-og.png" alt="MOONRAT rocket and moon world" />
+          <div class="tdb-card__media">
+            <img src="/demos/moonrat/moonrat-og.png" alt="MOONRAT rocket and moon world" loading="lazy" />
+          </div>
           <div class="tdb-card__inside">
             <div class="tdb-card__top">
               <span class="tdb-card__pill">08 / Meme site</span>
@@ -786,6 +967,43 @@
   <script>
     const year = document.querySelector('[data-tdb-year]');
     if (year) year.textContent = new Date().getFullYear();
+
+    const previews = [...document.querySelectorAll('[data-project-preview]')];
+    const loadPreview = (frame) => {
+      if (!frame.src) frame.src = frame.dataset.projectPreview;
+    };
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          loadPreview(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { rootMargin: '500px 0px' });
+      previews.forEach((frame) => observer.observe(frame));
+    } else {
+      previews.forEach(loadPreview);
+    }
+
+
+    const mascotStage = document.querySelector('[data-tdb-mascot-stage]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (mascotStage && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+      mascotStage.addEventListener('pointermove', (event) => {
+        const rect = mascotStage.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        mascotStage.style.setProperty('--tilt-y', `${x * 5}deg`);
+        mascotStage.style.setProperty('--tilt-x', `${y * -4}deg`);
+      });
+
+      mascotStage.addEventListener('pointerleave', () => {
+        mascotStage.style.setProperty('--tilt-x', '0deg');
+        mascotStage.style.setProperty('--tilt-y', '0deg');
+      });
+    }
   </script>
 </body>
 </html>
