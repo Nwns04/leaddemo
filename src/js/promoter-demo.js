@@ -79,8 +79,9 @@ function updateHeroMotion() {
 
   const rect = hero.getBoundingClientRect();
   const viewportHeight = window.innerHeight || 1;
-  const scrollRange = Math.max(hero.offsetHeight - viewportHeight, 1);
-  const progress = clamp(-rect.top / scrollRange, 0, 1);
+  // The hero itself is exactly one viewport tall. Progress follows the
+  // viewport leaving that hero, so the image never creates extra page height.
+  const progress = clamp(-rect.top / viewportHeight, 0, 1);
 
   const scale = 1 + progress * 0.045;
   const mediaY = -progress * 14;
