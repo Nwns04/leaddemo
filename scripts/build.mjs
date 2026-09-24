@@ -25,6 +25,9 @@ await mkdir(join(dist, "work", "lwolf"), { recursive: true });
 // STONKS
 await mkdir(join(dist, "work", "stonks"), { recursive: true });
 
+// PROMOTER DEMO
+await mkdir(join(dist, "work", "promoter"), { recursive: true });
+
 // NEW PROJECTS
 for (const project of ["moonrat", "gloop", "barkbyte"]) {
   await mkdir(join(dist, "work", project), { recursive: true });
@@ -50,12 +53,13 @@ for (const file of [
   "moonrat.css",
   "gloop.css",
   "barkbyte.css",
+  "promoter-demo.css",
 ]) {
   await cp(join(root, "src", "shared", file), join(dist, "shared", file));
 }
 
 // Shared JS
-for (const file of ["assets.js", "components.js", "dex-adapter.js", "site.js"]) {
+for (const file of ["assets.js", "components.js", "dex-adapter.js", "site.js", "promoter-demo.js"]) {
   await cp(join(root, "src", "js", file), join(dist, "shared", file));
 }
 
@@ -106,6 +110,8 @@ await cp(join(root, "src", "pages", "lwolf-buy.html"), join(dist, "work", "lwolf
 
 await cp(join(root, "src", "pages", "stonks.html"), join(dist, "work", "stonks", "index.html"));
 
+await cp(join(root, "src", "pages", "promoter-demo.html"), join(dist, "work", "promoter", "index.html"));
+
 for (const project of ["moonrat", "gloop", "barkbyte"]) {
   await cp(join(root, "src", "pages", `${project}.html`), join(dist, "work", project, "index.html"));
 }
@@ -125,6 +131,7 @@ Built dist/ with:
 /work/lwolf
 /work/lwolf/buy
 /work/stonks
+/work/promoter
 /work/moonrat
 /work/gloop
 /work/barkbyte
