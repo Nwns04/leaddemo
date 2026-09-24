@@ -27,6 +27,7 @@ await mkdir(join(dist, "work", "stonks"), { recursive: true });
 
 // PROMOTER DEMO
 await mkdir(join(dist, "work", "promoter"), { recursive: true });
+await mkdir(join(dist, "demos", "promoter"), { recursive: true });
 
 // NEW PROJECTS
 for (const project of ["moonrat", "gloop", "barkbyte"]) {
@@ -89,6 +90,7 @@ for (const project of ["moonrat", "gloop", "barkbyte"]) {
   await cp(join(root, "public", "demos", project), join(dist, "demos", project), { recursive: true });
 }
 await cp(join(root, "public", "demos", "mugi", "optimized"), join(dist, "demos", "mugi", "optimized"), { recursive: true });
+await cp(join(root, "public", "demos", "promoter", "aavatar.png"), join(dist, "demos", "promoter", "aavatar.png"));
 
 // Public root
 await cp(join(root, "public", "favicon.svg"), join(dist, "favicon.svg"));

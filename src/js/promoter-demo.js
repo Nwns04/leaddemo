@@ -82,11 +82,18 @@ function updateHeroMotion() {
   const scrollRange = Math.max(hero.offsetHeight - viewportHeight, 1);
   const progress = clamp(-rect.top / scrollRange, 0, 1);
 
-  const scale = 1 + progress * 0.055;
-  const mediaY = -progress * 18;
-  const copyY = -progress * 56;
-  const copyOpacity = clamp(1 - progress * 1.35, 0, 1);
-  const shadeOpacity = progress * 0.28;
+  const scale = 1 + progress * 0.045;
+  const mediaY = -progress * 14;
+
+  // Keep the hero copy present while the image carries the early scroll.
+  // Only begin the exit once the next chapter is genuinely approaching.
+  const fadeStart = 0.68;
+  const fadeEnd = 0.985;
+  const fadeProgress = clamp((progress - fadeStart) / (fadeEnd - fadeStart), 0, 1);
+  const easedFade = fadeProgress * fadeProgress * (3 - 2 * fadeProgress);
+  const copyY = -easedFade * 42;
+  const copyOpacity = 1 - easedFade;
+  const shadeOpacity = easedFade * 0.16;
 
   hero.style.setProperty("--hero-scale", scale.toFixed(4));
   hero.style.setProperty("--hero-media-y", `${mediaY.toFixed(1)}px`);
@@ -96,7 +103,7 @@ function updateHeroMotion() {
 
   const onContent = rect.bottom <= 96;
   promoHeader?.classList.toggle("is-on-content", onContent);
-  signalStrip?.classList.toggle("is-revealed", progress > 0.72 || onContent);
+  signalStrip?.classList.toggle("is-revealed", progress > 0.84 || onContent);
 }
 
 function requestHeroMotion() {

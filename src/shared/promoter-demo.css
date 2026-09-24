@@ -1978,3 +1978,106 @@ button { color: inherit; }
     opacity: 1 !important;
   }
 }
+
+/* Final hero image pass — real editorial artwork, wide cover copy, delayed exit. */
+.hero {
+  height: 146svh;
+}
+
+.hero__stage {
+  background: #2457ff;
+}
+
+.hero-media {
+  inset: -1.5%;
+  background: #2457ff;
+}
+
+.hero-media__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: 50% 40%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero-media__shade {
+  inset: auto 0 0;
+  height: 38%;
+  background: rgba(0, 0, 0, .72);
+  opacity: var(--hero-shade);
+}
+
+.hero__overlay.section-shell {
+  width: calc(100% - (var(--gutter) * 2));
+  max-width: none;
+}
+
+.hero__copy {
+  width: 100%;
+  max-width: none;
+}
+
+.hero h1 {
+  width: 100%;
+  max-width: none;
+  font-size: clamp(4.8rem, 11.4vw, 12rem);
+  line-height: .86;
+  letter-spacing: -.075em;
+  text-wrap: balance;
+  text-shadow: 0 2px 18px rgba(0,0,0,.18);
+}
+
+.hero__lede {
+  max-width: 48rem;
+  text-shadow: 0 1px 12px rgba(0,0,0,.2);
+}
+
+@media (min-width: 980px) {
+  .hero h1 {
+    font-size: clamp(6rem, 10.9vw, 11.8rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    height: 140svh;
+  }
+
+  .hero-media__image {
+    object-position: 50% 34%;
+  }
+
+  .hero__overlay.section-shell {
+    width: calc(100% - 36px);
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(3.7rem, 16.7vw, 6.4rem);
+    line-height: .88;
+    letter-spacing: -.068em;
+  }
+
+  .hero__lede {
+    max-width: 34rem;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero__overlay.section-shell {
+    width: calc(100% - 32px);
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 16.2vw, 5.4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    height: 100svh;
+  }
+}
