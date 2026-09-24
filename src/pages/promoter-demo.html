@@ -4,19 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="A mobile-first crypto promoter booking demo — clean reach, direct contact, no clutter." />
-  <title>Marco Alpha — Crypto Promotion</title>
+  <title>Nero Vale — Crypto Promotion</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/shared/promoter-demo.css" />
 </head>
 <body class="promo-demo">
   <header class="promo-header">
-    <a class="promo-wordmark" href="#top" aria-label="Marco Alpha home">
+    <a class="promo-wordmark" href="#top" aria-label="Nero Vale home">
       <span class="promo-wordmark__dot" aria-hidden="true"></span>
-      <span data-promoter-name>Marco Alpha</span>
+      <span data-promoter-name>Nero Vale</span>
     </a>
 
     <div class="promo-header__actions">
-      <a class="promo-header__link" data-x-link href="https://x.com/Marco_Alpheok" target="_blank" rel="noreferrer">X ↗</a>
+      <a class="promo-header__link" data-x-link href="https://x.com/NeroValeHQ" target="_blank" rel="noreferrer">X ↗</a>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to night mode">
         <span data-theme-icon aria-hidden="true">🌙</span>
       </button>
@@ -24,27 +24,36 @@
   </header>
 
   <main id="top">
-    <section class="hero section-shell" aria-labelledby="hero-title">
-      <div class="hero__copy">
-        <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> X + Telegram promotion</p>
-        <h1 id="hero-title">Put your project <em>in front</em> of crypto.</h1>
-        <p class="hero__lede">Solana, memecoins and low-cap projects promoted across crypto-native X and Telegram audiences.</p>
-
-        <div class="hero__actions">
-          <a class="primary-action" href="#book">Book a promo <span aria-hidden="true">↗</span></a>
-          <a class="text-action" data-x-link href="https://x.com/Marco_Alpheok" target="_blank" rel="noreferrer">View X profile ↗</a>
+    <section class="hero" aria-labelledby="hero-title" data-hero>
+      <div class="hero__stage">
+        <div class="hero-media" aria-hidden="true">
+          <div class="hero-media__art">
+            <div class="hero-media__topline">
+              <span>ON-CHAIN / SOLANA</span>
+              <span>001</span>
+            </div>
+            <div class="hero-media__name">NERO<br />VALE</div>
+            <div class="hero-media__stamp">X · TELEGRAM · SOL</div>
+          </div>
+          <div class="hero-media__shade"></div>
         </div>
-      </div>
 
-      <div class="hero-poster" aria-label="Marco Alpha promoter profile graphic">
-        <div class="hero-poster__top">
-          <span>ON-CHAIN</span>
-          <span>001</span>
-        </div>
-        <div class="hero-poster__mark" aria-hidden="true">M<span>✦</span>A</div>
-        <div class="hero-poster__bottom">
-          <strong>ALPHA</strong>
-          <span>Solana · DeFi · Memecoins</span>
+        <div class="hero__overlay section-shell">
+          <div class="hero__copy">
+            <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> X + Telegram promotion</p>
+            <h1 id="hero-title">Put your project <em>in front</em> of crypto.</h1>
+            <p class="hero__lede">Solana, memecoins and low-cap projects promoted across crypto-native X and Telegram audiences.</p>
+
+            <div class="hero__actions">
+              <a class="primary-action" href="#book">Book a promo <span aria-hidden="true">↗</span></a>
+              <a class="text-action" data-x-link href="https://x.com/NeroValeHQ" target="_blank" rel="noreferrer">View X profile ↗</a>
+            </div>
+          </div>
+
+          <div class="hero__scroll-cue" aria-hidden="true">
+            <span>Scroll</span>
+            <b>↓</b>
+          </div>
         </div>
       </div>
     </section>
@@ -56,13 +65,22 @@
       </div>
     </div>
 
-    <section class="services section-shell" aria-labelledby="services-title">
-      <header class="section-heading">
-        <p class="section-kicker">WHAT I DO</p>
-        <h2 id="services-title">Choose the push. Keep it simple.</h2>
-      </header>
+    <section class="services services-pull" aria-labelledby="services-title" data-services-pull>
+      <div class="services-pull__intro" data-services-intro>
+        <div class="services-pull__parallax" aria-hidden="true">
+          <span class="services-pull__ghost">PUSH</span>
+          <span class="services-pull__mark">↗</span>
+        </div>
 
-      <div class="service-list">
+        <header class="services-pull__headline">
+          <p class="section-kicker">WHAT I DO</p>
+          <h2 id="services-title">Choose the push.<br />Keep it simple.</h2>
+          <span class="services-pull__cue" aria-hidden="true">↓</span>
+        </header>
+      </div>
+
+      <div class="services-pull__body section-shell">
+        <div class="service-list">
         <button class="service-row" type="button" aria-expanded="false">
           <span class="service-row__number">01</span>
           <span class="service-row__emoji" aria-hidden="true">🐦</span>
@@ -94,35 +112,40 @@
           <span class="service-row__arrow" aria-hidden="true">＋</span>
           <span class="service-row__detail">For campaigns that need a different mix, send the project, timing and objective. We shape the promotion around the launch instead of forcing a preset package.</span>
         </button>
+        </div>
       </div>
     </section>
 
-    <section class="audience section-shell" aria-labelledby="audience-title">
-      <header class="section-heading section-heading--compact">
+    <section class="audience audience-live section-shell" aria-labelledby="audience-title" data-audience>
+      <div class="audience-live__ghost" aria-hidden="true">AUDIENCE</div>
+
+      <header class="audience-live__header">
         <p class="section-kicker">THE AUDIENCE</p>
-        <h2 id="audience-title">Crypto-native, not generic reach.</h2>
+        <h2 id="audience-title" class="audience-type" data-audience-type="Crypto-native reach, not generic noise.">
+          <span data-audience-type-text>Crypto-native reach, not generic noise.</span><i aria-hidden="true"></i>
+        </h2>
       </header>
 
-      <div class="audience-list">
-        <div class="audience-stat">
-          <strong data-x-followers>718</strong>
+      <div class="audience-list audience-live__stats" data-audience-stats>
+        <div class="audience-stat audience-stat--count" data-audience-stat>
+          <strong data-x-followers data-count-to="718">718</strong>
           <span>X followers</span>
         </div>
-        <div class="audience-stat">
-          <strong>SOL</strong>
+        <div class="audience-stat" data-audience-stat>
+          <strong class="audience-letter-reveal" data-letter-reveal="SOL">SOL</strong>
           <span>Primary ecosystem</span>
         </div>
-        <div class="audience-stat">
-          <strong>TG</strong>
+        <div class="audience-stat" data-audience-stat>
+          <strong class="audience-pop">TG</strong>
           <span>Community distribution</span>
         </div>
-        <div class="audience-stat">
-          <strong>X+TG</strong>
+        <div class="audience-stat audience-stat--merge" data-audience-stat>
+          <strong aria-label="X plus TG"><span>X</span><b>+</b><span>TG</span></strong>
           <span>Primary channels</span>
         </div>
       </div>
 
-      <p class="disclosure">Audience numbers shown in the demo are public profile figures. Campaign reach and performance should only be published when verified by the promoter.</p>
+      <p class="disclosure audience-live__note">Audience numbers shown in the demo are public profile figures. Campaign reach and performance should only be published when verified by the promoter.</p>
     </section>
 
     <section class="recent section-shell" aria-labelledby="recent-title">
@@ -156,31 +179,76 @@
       </div>
     </section>
 
-    <section class="principles section-shell" aria-labelledby="principles-title">
-      <p class="section-kicker">HOW I WORK</p>
-      <h2 id="principles-title">No inflated promises. Just a clean campaign.</h2>
-      <div class="principles__copy">
-        <p>Send the project, your links, timing and the promotion you want. We agree the placement before payment and keep campaign claims tied to what can actually be shown.</p>
-        <p>The page can also carry verified past campaigns, audience screenshots and booking details so new projects do not have to start every conversation from zero.</p>
-      </div>
+    <section class="principles section-shell" aria-labelledby="principles-title" data-campaign-form-section>
+      <header class="principles__intro" data-campaign-form-heading>
+        <p class="section-kicker">HOW I WORK</p>
+        <h2 id="principles-title">No inflated promises. Just a clean campaign.</h2>
+      </header>
+
+      <form class="campaign-form" data-campaign-form>
+        <div class="campaign-form__field">
+          <label for="promo-project">Project / token</label>
+          <input id="promo-project" name="project" type="text" placeholder="$TOKEN or project name" autocomplete="off" />
+        </div>
+
+        <div class="campaign-form__field">
+          <label for="promo-contact">Telegram / X handle</label>
+          <input id="promo-contact" name="contact" type="text" placeholder="@yourhandle" autocomplete="off" />
+        </div>
+
+        <div class="campaign-form__field campaign-form__field--wide">
+          <label for="promo-links">Project links</label>
+          <input id="promo-links" name="links" type="text" placeholder="X, Telegram, website or contract address" autocomplete="off" />
+        </div>
+
+        <fieldset class="campaign-form__field campaign-form__field--wide campaign-form__services">
+          <legend>What do you need?</legend>
+          <div class="campaign-form__choices">
+            <label><input type="radio" name="service" value="X promotion" checked /><span>🐦 X promotion</span></label>
+            <label><input type="radio" name="service" value="Telegram" /><span>✈️ Telegram</span></label>
+            <label><input type="radio" name="service" value="X + Telegram" /><span>⚡ X + Telegram</span></label>
+            <label><input type="radio" name="service" value="Custom campaign" /><span>🧠 Custom</span></label>
+          </div>
+        </fieldset>
+
+        <div class="campaign-form__field campaign-form__field--wide">
+          <label for="promo-timing">Launch date / preferred timing</label>
+          <input id="promo-timing" name="timing" type="text" placeholder="When do you want the push?" autocomplete="off" />
+        </div>
+
+        <div class="campaign-form__field campaign-form__field--wide">
+          <label for="promo-message">Message</label>
+          <textarea id="promo-message" name="message" rows="4" placeholder="Tell me what you are launching and what you want people to notice."></textarea>
+        </div>
+
+        <div class="campaign-form__footer campaign-form__field--wide">
+          <button class="campaign-form__submit" type="submit">Send request <span aria-hidden="true">↗</span></button>
+          <p class="campaign-form__status" data-campaign-form-status aria-live="polite"></p>
+        </div>
+      </form>
     </section>
 
-    <section class="book section-shell" id="book" aria-labelledby="book-title">
-      <p class="section-kicker">BOOK A PROMO</p>
-      <h2 id="book-title">Launching something? <em>Send it over.</em></h2>
-      <p class="book__copy">Share your token, campaign timing and the channels you want. Rates can be agreed directly based on the placement.</p>
-
-      <div class="book__actions">
-        <a class="primary-action primary-action--large" data-x-link href="https://x.com/Marco_Alpheok" target="_blank" rel="noreferrer">DM on X <span aria-hidden="true">↗</span></a>
-        <button class="text-action copy-handle" type="button" data-copy-handle>Copy @Marco_Alpheok</button>
+    <section class="book book-finale" id="book" aria-labelledby="book-title" data-book-finale>
+      <div class="book-finale__parallax" aria-hidden="true">
+        <span class="book-finale__ghost">PROMOTE</span>
+        <span class="book-finale__mark">↗</span>
       </div>
 
-      <div class="book__signature" aria-hidden="true">📣</div>
+      <div class="book-finale__card" data-book-card>
+        <p class="section-kicker">BOOK A PROMO</p>
+        <h2 id="book-title">Launching something? <em>Send it over.</em></h2>
+        <p class="book__copy">Share your token, timing and the channels you want. We can agree the placement directly.</p>
+
+        <div class="book__actions">
+          <a class="primary-action primary-action--large" data-x-link href="https://x.com/NeroValeHQ" target="_blank" rel="noreferrer">DM on X <span aria-hidden="true">↗</span></a>
+          <button class="text-action copy-handle" type="button" data-copy-handle>Copy @NeroValeHQ</button>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="promo-footer section-shell">
-    <span>© <span data-year></span> <span data-promoter-name>Marco Alpha</span></span>
+    <span>© <span data-year></span> <span data-promoter-name>Nero Vale</span></span>
     <span>Crypto promotion · Solana · Telegram · X</span>
   </footer>
 
